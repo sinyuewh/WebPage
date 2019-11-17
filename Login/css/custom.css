@@ -1,0 +1,112 @@
+/*居中按钮容器*/
+.btn-c{text-align: center;color: white;}
+.btn-c .btn-inline{display: inline-block;}
+.btn-c .btn-inline .btn-float{float: left;height: 32px;}
+.btn-c .btn-inline svg{font-size: 22px;}
+/*表单验证*/
+.check-t .triangle{
+    position: absolute;
+    top: 26px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #009688;
+}
+.check-t .text{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background-color:#009688;
+    color: white;
+    font-size: 12px;
+    box-shadow: 0 0 16px rgba(0,0,0,.4);
+
+}
+/*宽度*/
+.w-6{width: 64px;text-align: right!important;}
+.w-8{width: 80px;text-align: right!important;}
+.w-9{width: 90px;text-align: right!important;}
+.w-0{padding: 0 6px 0 0!important;}
+/*边距*/
+.top-1{margin-top: 12px;}
+.top-2{margin-top: 24px;}
+.top-3{margin-top: 36px;}
+.top-4{margin-top: 48px;}
+.top-5{margin-top: 60px;}
+.left-1{margin-left: 12px;}
+.left-2{margin-left: 24px;}
+.left-3{margin-left: 36px;}
+.left-4{margin-left: 48px;}
+.right-2{margin-right: 24px;}
+/*表单容器*/
+.form-wrap-8{width: 820px;margin: 0 auto;}
+.form-wrap-10{width: 1050px;margin: 12px auto;}
+.form-left{width: 390px;float: left;}
+.form-right{width: 390px;float: right;}
+.form-col-2{float: left;width: 220px;padding: 0 16px;}
+.layui-input-block{margin-left: 0;position: relative;}
+.layui-inline{margin-bottom: 12px;}
+.block-5{width: 500px;margin: 0 auto 10px;}
+.block-1{width: 176px;margin: 0 auto 10px;}
+.block-3{width: 390px;margin: 0 auto 10px;}
+.layui-form-label-block {
+    float: left;
+    display: block;
+    padding: 9px 15px 6px 0;
+    width: 100%;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+.layui-input-inline-156{width: 156px!important;}
+.layui-input-inline-150{width: 150px!important;}
+
+/*收起与展开按钮*/
+.control_side{
+    position: absolute;
+    z-index: 1314;
+    left: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 14px;
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgb(153,153,153);
+    border-radius: 2px;
+    cursor: pointer;
+}
+.control_side:hover{
+    color: white;
+    background-color: #009688;
+}
+.control_bottom{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 60px;
+    height: 14px;
+    line-height: 14px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgb(153,153,153);
+    border-radius: 2px;
+    cursor: pointer;
+}
+.control_bottom:hover{
+    color: white;
+    background-color: #009688;
+}
+.layui-input-inline-292{width: 292px!important;}
+.x-btn-group svg{font-size: 22px}

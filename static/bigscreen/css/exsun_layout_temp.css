@@ -1,0 +1,33 @@
+/**/
+.ex-layout-main-left{width:30%;float:left}
+.ex-layout-main-left-li{padding-top:15px;}
+.ex-layout-main-left-top,.ex-layout-main-right-top{height:150px;margin-left:20px;margin-top:10px;}
+.ex-layout-main-left-bottom{height:200px;margin-left:20px;}
+.ex-layout-main-right{width:30%;float:left}
+
+.ex-layout-main{height:auto;margin-top:30px;}
+.ex-layout-main-center{float:left;width:40%;height:auto;margin-left:10px}
+.ex-layout-main-center-main{height:700px;width:100%;}
+.ex-layout-main-right{float:left;width:25%;}
+.ex-layout-main-content{/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001f4e+1,002356+57,00327d+74,00255d+100 */
+    background: rgb(0,31,78); /* Old browsers */
+    background: -moz-linear-gradient(top, rgb(0,31,78) 1%, rgb(0,35,86) 57%, rgb(0,50,125) 74%, rgb(0,37,93) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgb(0,31,78) 1%,rgb(0,35,86) 57%,rgb(0,50,125) 74%,rgb(0,37,93) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(0,31,78) 1%,rgb(0,35,86) 57%,rgb(0,50,125) 74%,rgb(0,37,93) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001f4e', endColorstr='#00255d',GradientType=0) ;
+    overflow-x:hidden;
+    overflow-y:auto;); /* IE6-9 */}
+.ex_layout_title{color: #1c6aa4;padding-left: 20px;padding-bottom:10px;font-weight:bolder}
+.ex_layout-banner{width:100%;float:left;margin-bottom:10px;position:relative}
+.ex_layout-select{position:absolute;right:1.5rem;margin-top:45px;z-index: 999;height:auto;min-width:200px;max-width:250px;display:none;box-shadow: 0px 0px 2px 2px gray;}
+.ex_layout-select-show{position:absolute;left:85%;margin-top:-20px;height:30px;background-color:#08376a;color:#3caff1;border-color: #08376a;}
+.ex_layout-banner-bottom{width:100%;float:left;text-align: center}
+.ex_layout_main_title{
+    color: #3caff1;
+    font-size: 20px;
+}
+.ex-layout-main-center-box{margin-left:10px;margin-bottom:10px;text-align: center;box-shadow: 0px 0px 2px 2px #012e66;background-color:#012f6c;}
+.ex-center-box-span1{color:#f8c172;font-size:15px;}
+.ex-center-box-span2{color:#fe9500;font-size:20px;}
+.ex-center-box-sub{color:#b77234;font-size:15px;}
+

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>登录-信息管理系统 </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="Login/css/layui.css">
+    <link rel="shortcut icon " href="/favicon.ico" />
+    <link rel="stylesheet" href="Login/css/global.css">
+    <link rel="stylesheet" href="Login/css/main.css">
+    <link rel="stylesheet" href="Login/css/custom.css">
+    <link rel="stylesheet" href="Login/css/reset.css">
+    <link rel="Shortcut Icon" href="favicon.ico" />
+
+    <script src="Login/js/jquery-3.3.1.min.js"></script>
+
+    <style type="text/css">
+        body
+        {
+            overflow: hidden;
+        }
+        .login-cover
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('images/video_cover.png') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .logo
+        {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 10;
+        }
+        .logo li
+        {
+            display: inline-block;
+            color: white;
+        }
+        .logo li:nth-child(2)
+        {
+            position: relative;
+            top: 5px;
+            left: 10px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .layui-input:hover, .layui-textarea:hover
+        {
+            border-color: #5e83d7 !important;
+        }
+    </style>
+
+    <script>        try { Typekit.load({ async: true }); } catch (e) { }</script>
+
+    <script src="Login/js/api.js"></script>
+
+</head>
+<body>
+    <form method="post" id="form1">
+    <div class="login-bg" id="container">
+        <video class="login-video" id="background_video" loop muted></video>
+        <div class="login-cover" id="video_cover">
+        </div>
+        <div class="login-overlay" id="overlay">
+        </div>
+        <ul class="logo">
+            <li>
+                <img src="Login/images/logo2.png" style="position: relative; margin: 0;"></li>
+            <li class="title">信息管理系统</li>
+        </ul>
+    </div>
+    <div class="login-container">
+        <div id="update1">
+            <ul class="form ">
+                <input type="hidden" name="passwordin" id="passwordin" />
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        用户名</label>
+                    <div class="layui-input-block">
+                        <input name="userName" type="text" id="userName" placeholder="请输入用户名" data-text="请输入用户名"
+                            autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        密码</label>
+                    <div class="layui-input-block">
+                        <input id="passWord" name="passWord" type="password" placeholder="请输入密码" data-text="请输入密码"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        记住密码</label>
+                    <div class="layui-input-block" style="padding-top: 10px">
+                        <input name="online" type="checkbox" id="online" />
+                    </div>
+                </div>
+                <li class="submit" style="margin-top: 20px" id="submit" onclick="javascript:userLogin();">
+                    登录</li>
+                <input type="button" name="butLogin" value="click" id="butLogin" style="display: none" />
+            </ul>
+        </div>
+        <div class="error" id="error">
+        </div>
+    </div>
+    <div class="login-rights">
+        &copy;<span id="data">Copyright 信息管理系统 </span>&nbsp;
+    </div>
+
+    <script src="Login/js/Typekit.js"></script>
+
+    <script src="Login/js/bideo.js"></script>
+
+    <script src="Login/js/main.js"></script>
+
+    <script src="Login/js/iconfont.js"></script>
+
+    <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+
+    <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+
+    <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+
+    <script type="text/javascript" src="js/ApiUrl.js"></script>
+
+    <script type="text/javascript">
+        try {
+            if (window != top) {
+                top.location.href = location.href;
+            }
+        }
+        catch (e) { ; }
+
+        function userLogin() {
+            var _logName = document.getElementById("userName").value;
+            var _logPas = document.getElementById("passWord").value;
+
+            if (_logName == "") {
+                layer.alert("错误：用户名不能为空！");
+                document.getElementById("userName").focus();
+                return;
+            }
+
+            if (_logPas == "") {
+                layer.alert("错误：密码不能为空！");
+                document.getElementById("passWord").focus();
+                return;
+            }
+
+            //提交login的信息
+            var url = ES.LoginApi.login;
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    userName: _logName, password: _logPas
+                },
+                ok: function(resp) {
+                    var token = resp.data;   //用户登陆成功的token （session-id);
+                    //将token存入cookie
+                    $.cookie('token', token);
+
+                    //判断用户是否需要保存密码
+                    if ($('#online').get(0).checked) {
+                        $.cookie('last_login_password', _logPas);
+                    }
+                    else {
+                        $.cookie('last_login_password', null);
+                    }
+
+                    $.cookie('last_login_userid', _logName);
+
+                    //转主页
+                    top.location.href = "index.html";
+                }
+            })
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        //设置最近的用户名和密码
+        $('#userName').val($.cookie('last_login_userid'));
+        if ($.cookie('last_login_password') != "null" && $.cookie('last_login_password').length > 0) {
+            $('#online').get(0).checked = true;
+            $('#passWord').val($.cookie('last_login_password'));
+        }
+    </script>
+
+    <script type="text/javascript">
+        //判断是否支持H5
+        function checkhHtml5() {
+            if (typeof (Worker) !== "undefined") {
+                //alert("支持HTML5"); 
+            }
+            else {
+                layer.alert("错误：此浏览器不支持HTML5，建议您使用Google浏览器，360浏览器极速模式等方式操作！");
+            }
+        }
+
+        checkhHtml5();
+    </script>
+
+    </form>
+</body>
+</html>

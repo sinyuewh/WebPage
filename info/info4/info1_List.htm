@@ -1,0 +1,341 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="../../lib/html5shiv.js"></script>
+<script type="text/javascript" src="../../lib/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css"
+        id="skin" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+<script type="text/javascript" src="../../lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+    <title></title>
+</head>
+<body>
+    <nav class="breadcrumb">
+        <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 信息管理 <span class="c-gray en">&gt;</span>
+        重点项目 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+            title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="page-container">
+        <!--查询区设置-->
+        <div class="text-c">
+            项目名称：<input type="text" id="str1" class="input-text" placeholder="项目名称" style="width: 200px" />
+            &nbsp;&nbsp; 是否立项：<input type="text" id="str2" class="input-text" placeholder="是否立项"
+                style="width: 200px" />
+            &nbsp;&nbsp;
+            <button class="btn btn-success radius" id="butSearch" name="">
+                <i class="Hui-iconfont">&#xe665;</i> 查询</button>
+        </div>
+        <!--操作区设置-->
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span class="l">
+                <button id="butAdd" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe600;</i> 新增</button>&nbsp;&nbsp;
+                <button id="butDel" class="btn btn-danger radius">
+                    <i class="Hui-iconfont">&#xe6e2;</i> 删除</button>&nbsp;&nbsp;
+                <button id="butExport" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe644;</i> 导出</button>&nbsp;&nbsp;
+                <button id="butImport" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe645;</i> 导入</button>&nbsp;&nbsp; </span><span class="r">
+                        共有数据：<strong class="listDataTotal">0</strong> 条</span>
+        </div>
+        <!--数据表格-->
+        <div class="mt-20">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                    <tr class="text-c">
+                        <th width="25">
+                            <input type="checkbox" name="" value="1" />
+                        </th>
+                        <th>
+                            序号
+                        </th>
+                        <th>
+                            项目名称
+                        </th>
+                        <th>
+                            是否立项
+                        </th>
+                        <th>
+                            投资规模（万元）
+                        </th>
+                        <th>
+                            起止时间
+                        </th>
+                        <th>
+                            建设单位
+                        </th>
+                        <th>
+                            下达单位
+                        </th>
+                        <th>
+                            资金来源
+                        </th>
+                        <th>
+                            军费占比
+                        </th>
+                        <th>
+                            项目情况
+                        </th>
+                        <th>
+                            特点
+                        </th>
+                        <th>
+                            联系人
+                        </th>
+                        <th>
+                            联系电话
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--_footer 作为公共模版分离出去-->
+
+    <script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+
+    <script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+    <!--/_footer 作为公共模版分离出去-->
+    <!--请在下方写此页面业务相关的脚本-->
+
+    <script type="text/javascript" src="../../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+
+    <script type="text/javascript" src="../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script>
+
+    <script type="text/javascript" src="../../js/ApiUrl.js"></script>
+
+    <!--本页面相关的脚本-->
+
+    <script type="text/javascript">
+        var w1=900,h1=650;
+        var infokind="4";
+        
+        $(function () {
+            //1--设置表格
+            $('.table-sort').dataTable({
+                "columns": [
+                    { "data": "col1"},
+                    { "data": "col2"},
+                    { "data": "col3"},
+                    { "data": "col4"},
+                    { "data": "col5"},
+                    { "data": "col6"},
+                    { "data": "col7"},
+                    { "data": "col8"},
+                    { "data": "col9"},
+                    { "data": "col10"},
+                    { "data": "col11"}, 
+                    { "data": "col12"},
+                    { "data": "col13"},
+                    { "data": "col14"},
+                    { "data": "col15"},  
+                ],
+                "aaSorting": [
+                    [1, "asc"]
+                ], //默认第几个排序
+                "bStateSave": true, //状态保存
+                "aoColumnDefs": [
+                    // { "bVisible": false, "aTargets": [0] }, //控制列的隐藏显示
+                    {
+                        "orderable": false,
+                        "aTargets": [0]
+                    } // 制定列不参与排序
+                ]
+            });
+
+            // 设置表格高亮显示
+            $('.table-sort tbody').on('click', 'tr', function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                } else {
+                    $(this).addClass('selected');
+                }
+            });
+
+            //新增数据
+            $('#butAdd').click(function () {
+                var title = "添加【重点项目】";
+                var url = "info1_Add.htm";
+                layer_show(title, url, w1, h1);
+                return false;
+            });
+            
+            //导入数据
+            $('#butImport').click(function() {
+                var title = "导入【重点项目】";
+                var url = "info1_import.htm";
+                layer_show(title, url, 601, 350);
+                return false;
+            });
+
+
+            //批量删除数据
+            $('#butDel').click(function () {
+                var listId = '';
+                var checkedBox = $("input[name='seledoc']:checked");
+                if (checkedBox.length > 0) {
+                    $("input[name='seledoc']:checked").each(function (index) {
+                        if (index == 0) {
+                            listId = $(this).val();
+                        } else {
+                            listId += ',' + $(this).val();
+                        }
+                    })
+                    layer.confirm('确认要删除吗？', function (index) {
+                        $.ajax({
+                            type: "POST",
+                            url: ES.info.infoDelete,
+                            data: {
+                                ids: listId
+                            },
+                            ok: function (resp) {
+                                layer.msg('已删除!', {
+                                    icon: 1,
+                                    time: 1000
+                                })
+                                //删除成功后更新列表
+                                setTableData();
+                            }
+                        })
+
+                    });
+                } else {
+                    layer.msg("错误：请至少选择一条要删除的数据！");
+                }
+
+            });
+
+            
+            //导出数据
+            $('#butExport').click(function() {
+                var listId = '';
+                var checkedBox = $("input[name='seledoc']:checked");
+                if (checkedBox.length > 0) 
+                {
+                    $("input[name='seledoc']:checked").each(function (index) {
+                        if (index == 0) {
+                            listId = $(this).val();
+                        } else {
+                            listId += ',' + $(this).val();
+                        }
+                    });
+                }
+                
+                $.ajax({
+                    type: "POST",
+                    url: ES.info.infoExport,
+                    data: {
+                        infoKind: infokind,
+                        str1: $('#str1').val(),
+                        str2: $('#str2').val(),
+                        ids: listId,
+                    },
+                    ok: function(resp) {
+                    var title = "导出【重点项目】数据";
+                        var url = "info1_export.htm?downFile="+resp.data;
+                        layer_show(title, url, 400, 300); 
+                        return false;
+                    }
+                })
+            });
+
+            
+            //查询数据
+            $('#butSearch').click(function () {
+                setTableData();
+            });
+            //设置初始的数据
+            setTableData();
+        });
+        //数据详细
+        function checkDetall(ID) {
+            var title = "【重点项目】详细";
+            var url = "info1_Detail.htm?id="+ID;
+            layer_show(title, url, w1, h1);
+        }
+
+        //1--得到Api的数据并填充表格
+        function setTableData() {
+            $.ajax({
+                type: "POST",
+                url: ES.info.infoList,
+                data: {
+                    infoKind: infokind,
+                    str1: $('#str1').val(),
+                    str2: $('#str2').val(),
+                },
+                ok: function (resp) {
+                    var json = resp.data.content; //得到api的列表数据
+                    //设置数据总数
+                    $(".listDataTotal").text(resp.data.totalElements);
+                    fillTable(json); //设置表格的数据
+                }
+            })
+        }
+
+        //2--填充表格的数据
+        function fillTable(json) {
+            var table = $('.table-sort').DataTable();
+            //先移去所有的行
+            table.rows().remove().draw();
+            //形成数据的json格式
+            var data1 = [];
+            for (var i = 0, l = json.length; i < l; i++) {
+                //单行的json数据
+                var jsonObject = {};
+
+                var data = json[i];
+                
+                jsonObject["col1"] = "<input type='checkbox' value='" + data["id"] + "' name='seledoc'>";
+                jsonObject["col2"] = (i+1);
+                jsonObject["col3"] = data["str1"];
+                jsonObject["col4"] = data["str2"];
+                jsonObject["col5"] = data["str3"];
+                jsonObject["col6"] = data["str4"];
+                jsonObject["col7"] = data["str5"];
+                jsonObject["col8"] = data["str6"];
+                jsonObject["col9"] = data["str7"];
+                jsonObject["col10"] = data["str8"];
+                jsonObject["col11"] = data["str9"];;
+                jsonObject["col12"] = data["str10"];;
+                jsonObject["col13"] = data["str11"];;
+                jsonObject["col14"] = data["str12"];;
+                jsonObject["col15"] = "<a href='javascript:checkDetall(" + data["id"] +
+                    ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>";
+
+                data1.push(jsonObject);
+            }
+
+            //一次性加载json数据
+            table.rows.add(data1).draw().nodes().to$().addClass('text-c');
+            table.columns.adjust().draw();
+            $('.table-sort').css('width', '100%')
+        }
+    </script>
+
+</body>
+</html>

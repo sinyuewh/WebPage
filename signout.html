@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+     <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>    
+     <script type="text/javascript"  src="js/ApiUrl.js"></script>
+     <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+     <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+     <script language="javascript" type="text/javascript">
+         $(function() {
+             //注销当前的用户信息
+             var token = $.cookie('token');
+             var url = ES.LoginApi.signout;
+             $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {},
+                 ok: function(resp) {
+                     $.cookie('token', null);               //清除token
+                     top.location.href = "login.html";      //转登陆页
+                 }
+             })
+         });
+    
+     </script>
+</head>
+<body>
+
+</body>
+</html>

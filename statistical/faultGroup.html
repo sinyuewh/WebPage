@@ -1,0 +1,162 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="../lib/html5shiv.js"></script>
+<script type="text/javascript" src="../lib/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+<script type="text/javascript" src="../lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+    <title></title>
+</head>
+
+<body>
+    <nav class="breadcrumb">
+        <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 统计分析 <span class="c-gray en">&gt;</span>
+        故障分类统计 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+            title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <div class="page-container">
+        <!--查询区设置-->
+        <div class="text-c">
+            维保主管：<input name="leaderName" type="text" id="leaderName" class="input-text" placeholder="维保主管" style="width: 200px" />
+            &nbsp;&nbsp; 区域：<input name="district" type="text" id="district" class="input-text" placeholder="区域" style="width: 200px" />
+            &nbsp;&nbsp; 维保员：<input name="wbUserName" type="text" id="wbUserName" class="input-text" placeholder="维保员"
+                style="width: 200px" />
+            &nbsp;&nbsp; 统计年月区间：<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'maxDate\')||\'%y-%M\'}',dateFmt:'yyyy年MM月' })"
+                id="minDate" class="input-text Wdate" style="width: 120px;">
+            -
+            <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'minDate\')}',maxDate:'%y-%M',dateFmt:'yyyy年MM月' })"
+                id="maxDate" class="input-text Wdate" style="width: 120px;">
+            &nbsp;&nbsp;
+            <button class="btn btn-success radius" id="butSearch" name="butSearch">
+                <i class="Hui-iconfont">&#xe665;</i> 统计</button>
+        </div>
+        <!--操作区设置-->
+        <!--数据表格-->
+        <div class="page-container">
+            <div id="container" style="min-width: 700px; height: 400px">
+            </div>
+        </div>
+    </div>
+    <!--_footer 作为公共模版分离出去-->
+
+    <script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+
+    <script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+
+    <script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+    <!--/_footer 作为公共模版分离出去-->
+    <!--请在下方写此页面业务相关的脚本-->
+
+    <script type="text/javascript" src="../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+
+    <script type="text/javascript" src="../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="../lib/laypage/1.2/laypage.js"></script>
+
+    <script type="text/javascript" src="../js/ApiUrl.js"></script>
+
+    <!--请在下方写此页面业务相关的脚本-->
+
+    <script type="text/javascript" src="../lib/hcharts/Highcharts/5.0.6/js/highcharts.js"></script>
+
+    <script type="text/javascript" src="../lib/hcharts/Highcharts/5.0.6/js/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var groupData = [];
+            var highchartsLoad = function () {
+                $('#container').highcharts({
+                    chart: {
+                        type: 'pie',
+                        options3d: {
+                            enabled: true,
+                            alpha: 45,
+                            beta: 0
+                        }
+                    },
+                    title: {
+                        text: '故障分类统计'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            depth: 35,
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.name}'
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: 'Browser share',
+                        data: groupData
+                    }]
+                });
+
+            }
+            highchartsLoad();
+            //--得到Api的数据
+            var getData = function() {
+                $.ajax({
+                    type: "POST",
+                    url: ES.statistical.faultGroup,
+                    data: {
+                        leaderName: $('#leaderName').val(),
+                        minDate: $('#minDate').val(),
+                        maxDate: $('#maxDate').val(),
+                        district: $('#district').val(),
+                        wbUserName: $('#wbUserName').val()
+                    },
+                    ok: function (resp) {
+                        var json = resp.data; //得到api的列表数据
+                        groupData = [];
+                        for (let i in json) {
+                            let item = [];
+                            var value = json[i];
+                            var index = i;
+                            if(!isNaN(i)){
+                                index = i.toString();
+                                console.log(typeof(index));
+                            }else{
+                                index = i;
+                            }
+                            item=[index,value];
+                            groupData.push(item)
+                        }
+                        console.log(groupData);
+                        highchartsLoad();
+                    }
+                })
+            }
+            getData();
+            $("#butSearch").click(function(){
+                getData();
+            })
+});
+    </script>
+
+</body>
+
+</html>

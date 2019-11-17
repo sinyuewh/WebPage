@@ -1,0 +1,514 @@
+body {
+
+    background: url(../images/icon-table-background.png) center center no-repeat;
+    background-size: cover;
+}
+p{margin-bottom: 0;}
+table tr td,th{
+    color:#fff;
+    text-align: center;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:bofore {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.tx-c{
+    text-align: center;
+}
+.ex-layout-content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.ex-layout-content>div{
+    position: absolute;
+}
+.title {
+    width: 100%;
+    height: 70px;
+}
+
+.title-view {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 99;
+    width: 100%;
+    height: 130px;
+    background: url("../images/icon-title1.png") center 0px no-repeat;
+    background-size: cover;
+}
+
+.item-data {
+    color: #FE5500;
+}
+
+.item-data-rank {
+    color: #FE5500;
+}
+
+.ex-content-ul-item .item-data-dist {
+    color: #1E1E1E;
+    overflow: hidden;
+}
+
+.ex-theme-sitetab-dist>h4 {
+    line-height: 25px;
+    font-size: 1.6rem;
+    font-family: "黑体";
+}
+.mapView-tips{
+    color: #fff;
+    z-index: 1000;
+    padding:10px 10px 10px 40px;
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    background-color:rgba(0, 51, 113, 0.4);
+}
+.mapView-tips li{
+    /* width:100px; */
+    height: 30px;
+    line-height: 26px;
+    color:white;
+    font-size: 16px;
+    position: relative;
+}
+.mapView-tips ul li:nth-child(1) span{
+    display: inline-block;
+    width:15px;
+    height: 15px;
+    position: relative;
+    top:2px;
+    border-radius: 50%;
+    background-color: #f56944;
+}
+.mapView-tips ul li:nth-child(2) span{
+    display: inline-block;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    top:4px;
+    background-color: #f6e737;
+}
+.mapView-tips ul li:nth-child(3) span{
+    display: inline-block;
+    width:15px;
+    height: 15px;
+    border-radius: 50%;
+    top:4px;
+    background-color: #65ee6b;
+}
+.mapView-tips i{
+    font-style: normal;
+}
+.mapView-tips input{
+    display: none;
+}
+.mapView-tips input:checked+label{
+    background:url("../images/icon-choose-true.png") center center no-repeat;
+}
+.mapView-tips label label{
+    width:17px;
+    height: 17px;
+    border:1px solid white;
+    position: absolute;
+    left: -20px;
+    top: 5px;
+}
+.layout-now-date {
+    color: #fff;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    padding: 2px 2px;
+    z-index: 1000;
+    width: 384px;
+    height: 57px;
+
+}
+.count-data-list{
+    top: 130px;
+    left: 40px;
+    width: 80px;
+    height: 400px;
+}
+.layout-now-date ul {
+    width: 80px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 51, 113, 0.4);
+}
+
+.ex-content-map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.count-data-view>p {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.count-data-view>p label {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.count-data-view>p span {
+    position: relative;
+    left: 10px;
+    top: 6px;
+    font-size: 36px;
+}
+.count-data-view>p:nth-child(2){
+    cursor: pointer;
+    margin-left:20px;
+}
+.count-view {
+    width: 78px;
+    height: 78px;
+    line-height: 78px;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.count-body li span {
+    display: inline-block;
+    width:78px;
+    text-align: center;
+}
+
+.count-body li:nth-child(1) .count-view {
+    color: #f56944;
+    background-image: url("../images/icon-round-red.png");
+    background-size: cover;
+}
+
+.count-body li:nth-child(2) .count-view {
+    color: #f6e737;
+    background-image: url("../images/icon-round-yellow.png");
+    background-size: cover;
+}
+
+.count-body li:nth-child(3) .count-view {
+    color: #65ee6b;
+    background-image: url("../images/icon-round-green.png");
+    background-size: cover;
+}
+
+.content-left-view {
+    width: 380px;
+    height: 270px;
+    margin-bottom: 28px;
+    border: solid 1px #7baef2;
+}
+
+.content-right-view {
+    position: absolute;
+    top:120px;
+    right:20px;
+    width: 380px;
+    height: 268px;
+    margin-top: 30px;
+    border: solid 1px #7baef2;
+}
+
+.content-right-view .table-title table{
+    width:378px;
+    margin-bottom: 0;
+}
+.table-title thead tr{
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #164971;
+}
+
+.content-right-view #tableView{
+    width:378px;
+    height: 198px;
+    overflow: auto;
+}
+
+table{
+    position: relative;
+}
+#tableView table tbody tr{
+    height: 28px;
+    line-height: 28px;
+}
+.orgName{
+    cursor: pointer;
+}
+#liftDetail table tbody tr:nth-of-type(odd){
+    text-align: center;
+    background-color: #0b2336;
+}
+#liftDetail table tbody tr:nth-of-type(even){
+    text-align: center;
+    background-color: #164971;
+}
+#faultLiftList table tbody tr:nth-of-type(odd),#projectDetail table tbody tr:nth-of-type(odd){
+    text-align: center;
+    background-color: #0b2336;
+}
+#faultLiftList table tbody tr:nth-of-type(even),#projectDetail table tbody tr:nth-of-type(even){
+    text-align: center;
+    background-color: #164971;
+}
+.content-left-view>p {
+    width: 380px;
+    height: 36px;
+    background-image: url("../images//icon-rg-black.png");
+    background-size: cover;
+    line-height: 36px;
+    padding-left: 30px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.content-right-view>p {
+    width: 380px;
+    height: 36px;
+    background-image: url("../images//icon-rg-black.png");
+    background-size: cover;
+    line-height: 36px;
+    padding-left: 30px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.map-content-tab {
+    position: absolute;
+    top: 76px;
+    right: 0px;
+    box-sizing: border-box;
+    z-index: 1000;
+    width: 410px;
+    height: 100%;
+    color: #fff;
+    overflow-y: auto;
+}
+.map-choose-view{
+    color: #fff;
+    position: absolute;
+    top: 76px;
+    right: 20px;
+    z-index: 1000;
+    width:344px;
+    height: 44px;
+    background: url("../images/icon-choose-bg.png") center center no-repeat;
+}
+.map-choose-view ul{
+    width:100%;
+}
+.map-choose-view ul li{
+    float:left;
+    width:114px;
+    line-height: 44px;
+    height: 44px;
+    text-align: center;
+    color:#66a4ff;
+    cursor: pointer;
+}
+.map-choose-view ul li.active{
+    background: url("../images/icon-choose-active.png") center center no-repeat;
+    color:white;
+}
+.amap-logo {
+    right: 0 !important;
+    left: auto !important;
+    display: none;
+}
+
+.amap-copyright {
+    right: 70px !important;
+    left: auto !important;
+}  
+
+/* 关于 电梯详情列表弹框样式 */
+.dialog-content{
+    width:100%; 
+    height:100%; 
+    background-color: rgba(0,0,0,0.6); 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    display:none; 
+    z-index:1111; 
+}
+.dialog-lift-list {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left:-450px; 
+    width: 900px;
+    height: 568px;
+    z-index: 999;
+    background-image: url("../images/icon-center-list.png");
+    background-size: cover;
+    padding: 30px;
+    color:#fff;
+}
+.dialog-lift-list1 {
+    margin-left:-600px; 
+    width: 1200px;
+    height: 757px;
+}
+.dialog-lift-list>p {
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.icon-delete {
+    display: block;
+    width: 32px;
+    height: 32px;
+    float: right;
+    margin: 0px 2px 0 0;
+    z-index: 99;
+    background-image: url("../images/icon-delete.png");
+    background-size: cover;
+}
+.icon-delete1{
+    margin-right:20px;
+}
+.dialog-lift-list .table-title{
+    width:824px;
+    margin:0 10px;
+}
+.dialog-lift-list1 .table-title{
+    width:1124px;
+    margin:0 10px;
+}
+.dialog-list-body {
+    width:824px;
+    height: 422px;
+    overflow: auto;
+    margin: 10px;
+    margin-top: 0;
+}
+.dialog-list-body1{
+    width:1124px;
+    height: 600px;
+}
+.dialog-list-body table tbody tr{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+/* 关于视频监控列表 弹窗 样式 */
+.dialog1-content{
+    width:100%; 
+    height:100%; 
+    background-color: rgba(0,0,0,0.6); 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    display:none; 
+    z-index:1000; 
+}
+/* 关于项目列表 弹窗 样式 */
+.dialog2-content{
+    width:100%; 
+    height:100%; 
+    background-color: rgba(0,0,0,0.6); 
+    position:absolute; 
+    left:0px; 
+    top:0px; 
+    display:none; 
+    z-index:1000; 
+}
+
+.map-label{
+    padding: 6px 10px;
+}
+.map-label P:first-child{
+    margin-bottom:4px;
+}
+.amap-marker-label{
+    border: 2px solid #164971;
+    background-color: white;
+    white-space: nowrap;
+    cursor: default;
+    font-size: 12px;
+    line-height: 14px;
+    border-radius: 2px;
+    color:#164971;
+}
+.layui-layer-title{
+    background-color: #295792!important;
+    color:white!important;
+}
+.btn-primary-handle{
+    background-color:#295792;
+    border-radius: 4px;
+    padding:2px 8px;
+    margin-left: 10px;
+    border:1px solid white;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+.btn-primary-handle:hover{
+    opacity: 0.8;
+}
+.open-fault-lift{
+    cursor: pointer;
+}
+
+.state1-num,.state2-num,.state3-num{
+    color:white;
+    padding-left:10px;
+}
+
+/* 查询 */
+.search-project-view{
+    margin-left:360px;
+    position: relative;
+    bottom:4px;
+}
+.search-project-input{
+    width:240px;
+    height: 30px;
+    border:1px solid #295792;
+    line-height: 30px;
+    padding-left:10px;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+}
+.btn-search{
+    height: 30px;
+    padding:0px 14px;
+    border:0px;
+    border-radius:0 4px 4px 0;
+    background-color: #164971;
+    color:white;
+    box-sizing: border-box;
+    position: relative;
+    right:2px;
+}

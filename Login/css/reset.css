@@ -1,0 +1,65 @@
+/*1、全局样式重置*/
+*{ margin: 0;}
+body{background-color:#EFF1F9;font-family: "Microsoft YaHei", 微软雅黑, helvetica, arial, verdana, tahoma, sans-serif;}
+/*2、表格重置*/
+.layui-table{color: rgb(85,85,85);}
+.layui-table td{text-align: center;}
+.layui-table-view{margin: 5px 0 10px; }
+.layui-table-view .layui-table td, .layui-table-view .layui-table th{padding: 3px 0!important;}
+.layui-table-body{background-color: #f2f2f2!important;overflow-x: hidden;overflow-y: scroll;}
+.layui-table-body .layui-none{margin-top: 100px;font-size: 16px;color: rgb(85,85,85)!important;}
+.layui-table-view .layui-table{width: 100%!important;}
+.layui-table-header{box-sizing: border-box; padding-right: 16px;}
+.layui-table-header .layui-table th:last-child{border-right-width: 0!important;}
+.layui-table-patch{display: none!important;}
+/*3、分页插件*/
+.layui-laypage .layui-laypage-curr .layui-laypage-em{background-color: #5e83d7;}
+.layui-laypage a:hover, .layui-laypage span:hover{color: #5e83d7}
+.layui-laypage select{height: 24px;}
+/*3、表单*/
+.layui-form-select dl dd.layui-this{background-color: #009688!important;}
+.layui-form-checked[lay-skin=primary] i{color: white!important;background-color: #5e83d7!important;}
+.layui-form-checkbox[lay-skin=primary]:hover i{border-color:#009688!important;}
+.layui-textarea{min-height: 117px!important;}
+.layui-form-label{padding:9px 6px 9px 0 ;}
+.layui-input:hover, .layui-textarea:hover{border-color: #009688!important;}
+.layui-input, .layui-select, .layui-textarea{border-color: rgb(200,200,200);background-color: rgb(250,250,250);height: 36px;}
+.layui-form-onswitch{ border-color: #009688;  background-color: #009688;}
+.layui-form-switch{ margin-top: 0!important;}
+.layui-table-cell{padding: 0!important;}
+.layui-form-selected dl{overflow-x:hidden!important;}
+/*4、按钮*/
+/*.layui-btn{height: 36px;line-height: 36px!important;}*/
+.laytable-cell-1-id,.laytable-cell-2-id{
+  display: none;
+}
+.btn-float li:nth-child(2){
+  background: #eaeaea !important;
+  color: #333;
+}
+.toolBar .layui-btn-group li{
+  background-color: #49a7eb;
+}
+.query-btn li{
+  background: #5e83d7;
+}
+.btn-float li:nth-child(1){
+  background: #5e83d7 !important;
+}
+.i-rank{
+  display: block;
+  width:18px;
+  height: 18px;
+  text-align: center;
+  color: #fff;
+  background: #5e83d7;
+  line-height: 18px;
+  border-radius: 50%;
+}
+.statistics .item-rank .cell .company .symbol,.statistics .item-rank .cell .terminal .symbol {
+  margin-top: 9px;
+  margin-left: 15px;
+}
+.layui-btn-group .layui-btn-sm,.search-btn-group .layui-btn-sm{
+  background: #49a7eb;
+}

@@ -1,0 +1,1191 @@
+﻿<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="Bookmark" href="../../favicon.ico">
+    <link rel="Shortcut Icon" href="../../favicon.ico" />
+    <!--[if lt IE 9]>
+<script type="text/javascript" src="../../lib/html5shiv.js"></script>
+<script type="text/javascript" src="../../lib/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css"
+        id="skin" />
+    <link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+    <!--[if IE 6]>
+<script type="text/javascript" src="../../lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+</head>
+<body>
+    <article class="page-container">
+	<form action="" method="post" class="form form-horizontal" id="form1">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="roleName" name="roleName" 
+				    onblur="javascript:checkUniqueness('roles','roleName',this.value);">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="remark" name="remark">
+			</div>
+		</div>
+		<!--<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">数据权限：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="只能查看的项目ID，多个逗号分隔，不填为所有项目" id="Text1" name="">
+			</div>
+		</div>-->
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">功能权限：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+			    <!--基础数据-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="basedata" name="basedata" id="basedata">
+							<b>基础数据</b></label>
+					</dt>
+					<dd>
+						<!--项目管理--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="project" name="project" id="project">
+									<b>项目管理</b></label>
+							</dt>
+							<dd>
+							    <label class="">
+									<input type="checkbox" value="project:search" name="RolePermissions" id="project-0">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="project:add" name="RolePermissions" id="project-1">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="project:edit" name="RolePermissions" id="project-2">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="project:import" name="RolePermissions" id="project-3">
+									导入</label>
+								<label class="">
+									<input type="checkbox" value="project:export" name="RolePermissions" id="project-4">
+									导出</label>
+								
+							</dd>
+						</dl>				
+						<!--维保人员--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="wbPerson" id="wbPerson">
+									<b>维保人员</b></label>
+							</dt>
+							<dd>
+							    <label class="">
+									<input type="checkbox" value="wbPerson:search" name="RolePermissions" id="wbPerson-0">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="wbPerson:add" name="RolePermissions" id="wbPerson-1">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="wbPerson:edit" name="RolePermissions" id="wbPerson-2">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="wbPerson:resetPass" name="RolePermissions" id="wbPerson-3">
+									重置密码</label>	
+							</dd>
+						</dl>
+						<!--电梯管理--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="lift" id="lift">
+									<b>电梯管理</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="lift:search" name="RolePermissions" id="lift-0">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="lift:add" name="RolePermissions" id="lift-1">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="lift:edit"name="RolePermissions" id="lift-2">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="lift:setPerson"name="RolePermissions" id="Checkbox38">
+									责任到人</label>
+								<!--<label class="">
+									<input type="checkbox" value="lift:import" name="RolePermissions" id="lift-3">
+									导入</label>
+								<label class="">
+									<input type="checkbox" value="lift:export" name="RolePermissions" id="lift-4">
+									导出</label>-->
+							</dd>
+						</dl>
+						<!--维保标准--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="wbStandard" id="wbStandard">
+									<b>维保标准</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="wbStandard:search" name="RolePermissions" id="Checkbox30">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="wbStandard:add" name="RolePermissions" id="Checkbox31">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="wbStandard:edit"name="RolePermissions" id="Checkbox32">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="wbStandard:delete" name="RolePermissions" id="Checkbox33">
+									删除</label>
+							</dd>
+						</dl>
+						<!--巡查标准--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="xcStandard" id="Checkbox29">
+									<b>巡查标准</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="xcStandard:search" name="RolePermissions" id="Checkbox34">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="xcStandard:add" name="RolePermissions" id="Checkbox35">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="xcStandard:edit"name="RolePermissions" id="Checkbox36">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="xcStandard:delete" name="RolePermissions" id="Checkbox37">
+									删除</label>
+							</dd>
+						</dl>
+						
+						<!--质检标准-->
+						<dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="zcStandard" id="Checkbox114">
+									<b>质检标准</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="zcStandard:search" name="RolePermissions" id="Checkbox115">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="zcStandard:add" name="RolePermissions" id="Checkbox116">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="zcStandard:edit"name="RolePermissions" id="Checkbox117">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="zcStandard:delete" name="RolePermissions" id="Checkbox118">
+									删除</label>
+							</dd>
+						</dl>
+						
+						<!--摄像头管理--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="xcStandard" id="Checkbox39">
+									<b>摄像头管理</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="camera:search" name="RolePermissions" id="Checkbox40">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="camera:add" name="RolePermissions" id="Checkbox41">
+									新增</label>
+								<label class=""> 
+									<input type="checkbox" value="camera:edit"name="RolePermissions" id="Checkbox42">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="camera:delete" name="RolePermissions" id="Checkbox43">
+									批量删除</label>
+							</dd>
+						</dl>
+						<!--电梯黑匣子--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="blackbox" id="Checkbox44">
+									<b>电梯黑匣子</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="blackbox:search" name="RolePermissions" id="Checkbox45">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="blackbox:add" name="RolePermissions" id="Checkbox46">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="blackbox:edit"name="RolePermissions" id="Checkbox47">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="blackbox:delete" name="RolePermissions" id="Checkbox48">
+									批量删除</label>
+							</dd>
+						</dl>
+						<!--电梯广告机--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="advertising" id="Checkbox49">
+									<b>电梯广告机</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="advertising:search" name="RolePermissions" id="Checkbox50">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="advertising:add" name="RolePermissions" id="Checkbox51">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="advertising:edit"name="RolePermissions" id="Checkbox52">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="advertising:delete" name="RolePermissions" id="Checkbox53">
+									批量删除</label>
+							</dd>
+						</dl>
+						
+						<!--打印模板-->
+						<!--<dl class="cl permission-list2" style="display:none">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="printTemplates" id="Checkbox54">
+									<b>打印模板</b></label>
+							</dt>
+							<dd>
+							   <label class="">
+									<input type="checkbox" value="printTemplates:search" name="RolePermissions" id="Checkbox55">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="printTemplates:add" name="RolePermissions" id="Checkbox56">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="printTemplates:edit"name="RolePermissions" id="Checkbox57">
+									编辑</label>
+								<label class="">
+									<input type="checkbox" value="printTemplates:delete" name="RolePermissions" id="Checkbox58">
+									批量删除</label>
+							</dd>
+						</dl>-->
+					</dd>
+				</dl>
+				
+				<!--监控中心-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="user-Character-1">
+							<b>监控中心</b></label>
+					</dt>
+					<dd>
+						<!--实时故障--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="user-Character-1-0">
+									<b>实时故障</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:fault:search" name="RolePermissions" id="user-Character-1-0-0">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="monitor:fault:add" name="RolePermissions" id="user-Character-1-0-1">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="monitor:fault:errorReport" name="RolePermissions" id="user-Character-1-0-2">
+									设置误报</label>
+								<label class="">
+									<input type="checkbox" value="monitor:fault:reminder" name="RolePermissions" id="user-Character-1-0-3">
+									催单</label>
+							</dd>
+						</dl>
+						<!--工单跟踪--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox59">
+									<b>工单跟踪</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:workbill:search" name="RolePermissions" id="Checkbox60">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="monitor:workbill:reminder" name="RolePermissions" id="Checkbox119">
+									催单</label>
+								<label class="">
+									<input type="checkbox" value="monitor:workbill:searchplace" name="RolePermissions" id="Checkbox120">
+									查看位置</label>
+							</dd>
+						</dl>
+						<!--维保提醒--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox61">
+									<b>维保提醒</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:wbbill:search" name="RolePermissions" id="Checkbox62">
+									查询</label>
+							</dd>
+						</dl>
+						<!--年检提醒--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox63">
+									<b>年检提醒</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:inspection:search" name="RolePermissions" id="Checkbox64">
+									查询</label>
+							</dd>
+						</dl>
+						<!--质检提醒--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox121">
+									<b>质检提醒</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:zcbill:search" name="RolePermissions" id="Checkbox122">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="monitor:zcbill:add" name="RolePermissions" id="Checkbox137">
+									发布质检任务</label>
+							</dd>
+						</dl>
+						
+						<!--制动器试验提醒--><dl class="cl permission-list2">
+						<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox123">
+									<b>制动器提醒</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:brake:search" name="RolePermissions" id="Checkbox124">
+									查询</label>
+							</dd>
+						</dl>
+						
+						<!--限速器校验提醒--><dl class="cl permission-list2">
+						<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox125">
+									<b>限速器提醒</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:speedlimit:search" name="RolePermissions" id="Checkbox126">
+									查询</label>
+							</dd>
+						</dl>
+						
+						<!--年检反馈--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox65">
+									<b>年检反馈</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:inspectionFeedBack:search" name="RolePermissions" id="Checkbox66">
+									查询</label>
+							</dd>
+						</dl>
+						<!--摄像头监控--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox67">
+									<b>摄像头监控</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:camera:search" name="RolePermissions" id="Checkbox68">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="monitor:manylift:search" name="RolePermissions" id="Checkbox127">
+									多梯监控</label>
+							</dd>
+						</dl>
+						<!--黑匣子监控--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox69">
+									<b>黑匣子监控</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="monitor:blackbox:search" name="RolePermissions" id="Checkbox70">
+									查询</label>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+				
+				<!--数据中心-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="Checkbox1">
+							<b>数据中心</b></label>
+					</dt>
+					<dd>
+						<!--电梯维保单--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox2">
+									<b>电梯维保单</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:wkbill:search" name="RolePermissions" id="Checkbox3">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:wkbill:print" name="RolePermissions" id="Checkbox4">
+									打印单据</label>
+								<!--<label class="">
+									<input type="checkbox" value="datacenter:wkbill:export" name="RolePermissions" id="Checkbox5">
+									导出</label>-->
+							</dd>
+						</dl>
+						<!--电梯巡查单--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox6">
+									<b>电梯巡查单</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:xcbill:search" name="RolePermissions" id="Checkbox7">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:xcbill:print" name="RolePermissions" id="Checkbox71">
+									打印单据</label>
+								<!--<label class="">
+									<input type="checkbox" value="datacenter:xcbill:export" name="RolePermissions" id="Checkbox72">
+									导出</label>-->
+							</dd>
+						</dl>
+						
+						<!--维修单管理--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox73">
+									<b>电梯维修单</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:workbill:search" name="RolePermissions" id="Checkbox74">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:workbill:print" name="RolePermissions" id="Checkbox75">
+									打印单据</label>
+								<!--<label class="">
+									<input type="checkbox" value="datacenter:workbill:export" name="RolePermissions" id="Checkbox76">
+									导出</label>-->
+							</dd>
+						</dl>
+						
+						<!--电梯质检单--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox5">
+									<b>电梯质检单</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:zjbill:search" name="RolePermissions" id="Checkbox72">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:zjbill:export" name="RolePermissions" id="Checkbox76">
+									导出单据</label>
+								<!--<label class="">
+									<input type="checkbox" value="datacenter:workbill:export" name="RolePermissions" id="Checkbox76">
+									导出</label>-->
+							</dd>
+						</dl>
+						
+						<!-- 维保计划--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox81">
+									<b> 维保计划</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:wbplan:search" name="RolePermissions" id="Checkbox82">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!-- 年检计划--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox83">
+									<b> 年检计划</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:inspectionPlan:search" name="RolePermissions" id="Checkbox84">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!-- 质检计划--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox128">
+									<b> 质检计划</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:zjPlan:search" name="RolePermissions" id="Checkbox129">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!-- 年检反馈--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox85">
+									<b> 年检反馈</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:inspectionFeedBack:search" name="RolePermissions" id="Checkbox86">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!--年检报告--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox77">
+									<b>年检报告</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:inspection:search" name="RolePermissions" id="Checkbox78">
+									查询</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:inspection:add" name="RolePermissions" id="Checkbox79">
+									新增</label>
+								<label class="">
+									<input type="checkbox" value="datacenter:inspection:edit" name="RolePermissions" id="Checkbox80">
+									编辑</label>
+							</dd>
+						</dl>
+						
+						
+						
+						<!-- 故障记录--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox87">
+									<b> 故障记录</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:fault:search" name="RolePermissions" id="Checkbox88">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!--  事件记录--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox89">
+									<b>事件记录</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:accident:search" name="RolePermissions" id="Checkbox90">
+									查询</label>
+								
+								<label class="">
+									<input type="checkbox" value="datacenter:accident:add" name="RolePermissions" id="Checkbox91">
+									新增</label>
+									
+							    <label class="">
+									<input type="checkbox" value="datacenter:accident:edit" name="RolePermissions" id="Checkbox92">
+									编辑</label>
+							</dd>
+						</dl>
+						
+						<!-- 电梯知识库--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox93">
+									<b> 电梯知识库</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:knowledge:search" name="RolePermissions" id="Checkbox94">
+									查询</label>
+								
+								<label class="">
+									<input type="checkbox" value="datacenter:knowledge:add" name="RolePermissions" id="Checkbox95">
+									新增</label>
+									
+							    <label class="">
+									<input type="checkbox" value="datacenter:knowledge:edit" name="RolePermissions" id="Checkbox96">
+									编辑</label>
+									
+								<label class="">
+									<input type="checkbox" value="datacenter:knowledge:delete" name="RolePermissions" id="Checkbox97">
+									删除</label>
+							</dd>
+						</dl>
+						
+						<!-- 经验心得--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox98">
+									<b> 经验心得</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="datacenter:experience:search" name="RolePermissions" id="Checkbox99">
+									查询</label>
+																	
+							    <label class="">
+									<input type="checkbox" value="datacenter:experience:edit" name="RolePermissions" id="Checkbox101">
+									编辑</label>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+								
+				<!--统计分析-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="Checkbox8">
+							<b>统计分析</b></label>
+					</dt>
+					<dd>
+						<!--困人趋势分析--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox9">
+									<b>困人数据分析</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:fault:trapped" name="RolePermissions" id="Checkbox10">
+									统计</label>
+								
+							</dd>
+						</dl>
+						
+						<!--故障趋势分析--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox11">
+									<b>故障数据分析</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:fault:trend" name="RolePermissions" id="Checkbox12">
+									统计</label>
+								
+							</dd>
+						</dl>
+						
+						<!--维保情况分析--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox130">
+									<b>维保情况分析</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:wbdata:analys" name="RolePermissions" id="Checkbox131">
+									统计</label>
+								
+							</dd>
+						</dl>
+						<!--故障分类统计--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox13">
+									<b>故障分类统计</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:fault:kind" name="RolePermissions" id="Checkbox14">
+									统计</label>
+								
+							</dd>
+						</dl>
+						
+						<!--年检数据统计--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox132">
+									<b>年检数据统计</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:inspection:analys" name="RolePermissions" id="Checkbox133">
+									统计</label>
+								
+							</dd>
+						</dl>
+						
+						<!--项目工作统计--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox15">
+									<b>项目工作统计</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:project:workload" name="RolePermissions" id="Checkbox16">
+									统计</label>
+								
+							</dd>
+							
+							
+						</dl>
+						
+						<!--个人工作统计--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox17">
+									<b>个人工作统计</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="statistical:person:workload" name="RolePermissions" id="Checkbox18">
+									统计</label>
+								
+							</dd>
+							
+							
+						</dl>
+					</dd>
+				</dl>
+				
+				<!--日志管理-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="Checkbox19">
+							<b>日志管理</b></label>
+					</dt>
+					<dd>
+						<!--签到日志--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox20">
+									<b>签到日志</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="log:sign:search" name="RolePermissions" id="Checkbox21">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!--登陆日志--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox22">
+									<b>登陆日志</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="log:login:search" name="RolePermissions" id="Checkbox23">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+						<!--操作日志--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox24">
+									<b>操作日志</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="log:operation:search" name="RolePermissions" id="Checkbox25">
+									查询</label>
+								
+							</dd>
+						</dl>
+						
+					</dd>
+				</dl>
+				
+				
+				<!--系统管理-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="Checkbox26">
+							<b>系统管理</b></label>
+					</dt>
+					<dd>
+						<!--角色管理--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox27">
+									<b>角色管理</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="system:role:search" name="RolePermissions" id="Checkbox28">
+									查询</label>
+									
+									<input type="checkbox" value="system:role:add" name="RolePermissions" id="Checkbox105">
+									新增</label>
+									
+									<input type="checkbox" value="system:role:edit" name="RolePermissions" id="Checkbox106">
+									编辑</label>
+									
+									<input type="checkbox" value="system:role:delete" name="RolePermissions" id="Checkbox107">
+									删除</label>
+								
+							</dd>
+						</dl>
+						
+						<!--平台用户--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox100">
+									<b>平台用户</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="system:platuser:search" name="RolePermissions" id="Checkbox102">
+									查询</label>
+									
+									<input type="checkbox" value="system:platuser:add" name="RolePermissions" id="Checkbox103">
+									新增</label>
+									
+									<input type="checkbox" value="system:platuser:edit" name="RolePermissions" id="Checkbox104">
+									编辑</label>
+									
+									<input type="checkbox" value="system:platuser:resetPass" name="RolePermissions" id="Checkbox112">
+									重置密码</label>
+								
+							</dd>
+						</dl>		
+						
+						<!--平台用户--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox108">
+									<b>业主用户</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="system:owneruser:search" name="RolePermissions" id="Checkbox109">
+									查询</label>
+									
+									<input type="checkbox" value="system:owneruser:add" name="RolePermissions" id="Checkbox110">
+									新增</label>
+									
+									<input type="checkbox" value="system:owneruser:edit" name="RolePermissions" id="Checkbox111">
+									编辑</label>
+									
+									<input type="checkbox" value="system:owneruser:resetPass" name="RolePermissions" id="Checkbox113">
+									重置密码</label>
+								
+							</dd>
+						</dl>	
+						
+						<!--平台用户-->
+						<dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox54">
+									<b>通知公告</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="system:notice:search" name="RolePermissions" id="Checkbox55">
+									查询</label>
+									
+									<input type="checkbox" value="system:notice:add" name="RolePermissions" id="Checkbox56">
+									新增</label>
+									
+									<input type="checkbox" value="system:notice:update" name="RolePermissions" id="Checkbox57">
+									编辑</label>
+									
+									<input type="checkbox" value="system:notice:delete" name="RolePermissions" id="Checkbox58">
+									删除</label>
+								
+							</dd>
+						</dl>						
+					</dd>
+				</dl>
+				
+				<!--其他-->
+				<dl class="permission-list">
+					<dt>
+						<label>
+							<input type="checkbox" value="" name="user-Character-0" id="Checkbox134">
+							<b>其他</b></label>
+					</dt>
+					<dd>
+						<!--广告机后台--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox135">
+									<b>广告机后台</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="other:advertise" name="RolePermissions" id="Checkbox136">
+									管理</label>
+							</dd>
+						</dl>
+						
+						<!--大屏监控--><dl class="cl permission-list2">
+							<dt>
+								<label class="">
+									<input type="checkbox" value="" name="user-Character-1-0" id="Checkbox140">
+									<b>大屏监控</b></label>
+							</dt>
+							<dd>
+								<label class="">
+									<input type="checkbox" value="other:bigscreen" name="RolePermissions" id="Checkbox141">
+									查看</label>
+							</dd>
+						</dl>		
+										
+					</dd>
+				</dl>
+			</div>
+		</div>
+		
+		<div class="row cl">
+            <div style="text-align: center">
+                <input class="btn btn-primary radius" runat="server" id="btnSubmit" type="submit"
+                    value="&nbsp;&nbsp;提交&nbsp;&nbsp;" authority="system:role:add|system:notice:update" style="display:none" />
+                &nbsp;&nbsp;
+                <button onclick="layer_close();" class="btn btn-default radius" type="button">
+                    &nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+            </div>
+        </div>
+	</form>
+</article>
+    <!--_footer 作为公共模版分离出去-->
+
+    <script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+
+    <script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+
+    <script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+    <!--/_footer 作为公共模版分离出去-->
+    <!--请在下方写此页面业务相关的脚本-->
+
+    <script type="text/javascript" src="../../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+
+    <script type="text/javascript" src="../../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+
+    <script type="text/javascript" src="../../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+    <script src="../../js/ApiUrl.js" type="text/javascript"></script>
+
+    <script src="../../js/Authority.js" type="text/javascript"></script>
+    
+
+    <script type="text/javascript">
+    $(function(){
+        
+	    $(".permission-list dt input:checkbox").click(function(){
+		    $(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+	    });
+	    
+	    
+	    $(".permission-list2 dd input:checkbox").click(function(){
+		    var l =$(this).parent().parent().find("input:checked").length;
+		    var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+		    if($(this).prop("checked")){
+			    $(this).closest("dl").find("dt input:checkbox").prop("checked",true);
+			    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
+		    }
+		    else{
+			    if(l==0){
+				    $(this).closest("dl").find("dt input:checkbox").prop("checked",false);
+			    }
+			    if(l2==0){
+				    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
+			    }
+		    }
+	    });
+    	
+	        $("#form1").validate({
+		        rules:{
+			        roleName:{ required:true,},
+		        },
+		        onkeyup:false,
+		        focusCleanup:true,
+		        success:"valid",
+		        submitHandler:function(form)
+		        {
+		            //提交数据的代码
+		            layer.msg("正在提交数据，请等待。。。",function(){submitData();});
+			        return false;
+		        }
+	        });
+        });
+    </script>
+    
+    <script type="text/javascript">
+        //获取原来的数据
+        var id = 0;
+        $(function() {
+            //1.获取url中的id参数
+            var parse = getParseUrl() || [];
+            id = parse["id"];
+            if (id != undefined) {
+                setRoleData(id);
+            }
+            else {
+                id = 0;
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        //提交代码的处理
+        function submitData() {
+            //获取选中的值
+            var chk_value = "";
+            $('input[name="RolePermissions"]:checked').each(function() {
+                if (chk_value.length = 0) {
+                    chk_value = $(this).val();
+                }
+                else {
+                    chk_value = chk_value + "," + $(this).val();
+                }
+            });
+
+            var url = ES.system.roleCreate;
+            if (id != 0) {
+                url = ES.system.roleUpdate;
+            }
+            var jsonObject = {};
+            jsonObject["roleName"] = $('#roleName').val();
+            jsonObject["permissions"] = chk_value;
+            jsonObject["remark"] = $('#remark').val();
+            jsonObject["id"] = id;
+            
+            var token = $.cookie('token');
+            $.ajax({
+                async: false,
+                type: "POST",
+                headers: { token: token },
+                url: url,
+                contentType: "application/json",
+                data: JSON.stringify(jsonObject),
+                dataType: "json",
+                success: function(resp) {
+                    if (resp.code == 0) {
+                        layer.alert("提示：操作成功！", function() {
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.$('#butSearch').click(); //点击父页面的查询按钮
+                            parent.layer.close(index);
+                        });
+                    }
+                    else if (resp.code == -1) {
+                        top.location.href = "../login.html";    //转登陆页
+                    }
+                    else {
+                        layer.alert(resp.msg);
+                    }
+                },
+                error: function() {
+                    alert("ajax提交数据失败，请重试！");
+                }
+            });       
+        }
+
+        //验证角色名称的唯一性
+        function checkUniqueness(tablename, colname, checkvalue) {
+            var url = ES.commApi.checkUniqueness;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    tablename: tablename,
+                    colname: colname,
+                    checkvalue: checkvalue,
+                    id: 0
+                },
+                success: function(resp) {
+                    if (resp.code != 0) {
+                        layer.alert("角色名称【" + checkvalue + "】已存在，请换个名称！");
+                    }
+                }
+            });
+
+        }
+
+        //设置角色的数据
+        function setRoleData(id) {
+            var url = ES.system.roleDetail;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {
+                    id: id
+                },
+                success: function(resp) {
+                    if (resp.code == 0) {
+                        var json1 = resp.data;
+                        $('#roleName').val(json1["roleName"]);
+                        //roleName 设置为不能修改
+                        $("#roleName").attr("disabled", "disabled");
+
+                        $('#remark').val(json1["remark"]);
+
+                        var permissions = json1["permissions"];
+                        if (permissions.length > 0) {
+                            var permiss = permissions.split(",");
+                            $('input[name="RolePermissions"]').each(function() {
+                                if ($.inArray($(this).val(), permiss) >= 0) {
+                                   $(this).attr("checked", "checked");
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

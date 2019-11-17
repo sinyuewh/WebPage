@@ -1,0 +1,56 @@
+﻿/******************
+    ex-layout-header 
+        ***************/
+    
+.ex-layout-header{position:static;}
+
+/*ex-layout-header-top*/
+.ex-layout-logo-img {margin:0 1em;}
+.ex-layout-logo-img DIV{display:none;}
+.ex-layout-header HR{height:1.2em;margin:.7em .5em;}
+.ex-theme-logo-text{font-size:1.2em;margin-left:.4em;}
+
+/*ex-layout-administrator*/
+.ex-layout-administrator {right:1em;}
+.ex-layout-administrator{right:.6em;}/*可去*/
+.ex-layout-administrator .item{margin-right:1.3em;margin-left:1.5em;}
+.ex-layout-administrator .ex-i{font-size:1.2em;}
+.ec-text-xs{font-size:.7em;}
+.ex-layout-administrator .ec-round.ec-badge{top:.2em;right:-1.4em;}
+.ex-layout-administrator > UL > LI{margin-right:.7em;}
+.ex-layout-administrator > UL > LI HR{margin-right:.9em;}
+.ex-theme-change{margin-top:.3em;}
+.ex-layout-administrator .menu{right:-2.2em;}
+.ex-layout-administrator .menu A{font-size:.9em;padding:.7em .95em;}
+.ex-layout-administrator .menu > LI{border-bottom-color:#888;}
+.ex-layout-administrator .menu > LI I.ex-icon-32{margin:.5em .5em 0 0}
+
+/*ex-theme-nav*/
+.ex-theme-nav > LI > A{padding:0 3em}
+.ex-theme-nav UL.ec-dropdown-content > LI > A{padding:.3em 2em;}
+
+
+/******************
+    ex-layout-submenu 
+        ***************/
+
+.ex-layout-submenu .ex-layout-memory > LI > A{margin-top:.3em;margin-left:.5em;}
+.ex-layout-submenu > BUTTON{margin-top:.3em;margin-left:.5em;}
+
+/******************
+    ex-layout-mainframe 
+        ***************/
+
+.ex-layout-counter-box DT{font-size:1em;}
+
+.ex-icon-counter{margin:.7em;}
+
+.ex-theme-counter-top .num{font-size:3.2em;}
+
+.ex-layout-counter-box .num{font-size:1.6em;}
+
+.ex-layout-area-tab{font-size:1.1em;}
+
+.ex-overview-title{margin:.6em;padding:0 1.3em;font-size:1.2em;}
+
+.ex-dashboard-grid-title > LI{padding-left:2em;font-size:1.1em;min-height:1em;}

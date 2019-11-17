@@ -1,0 +1,229 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<!--[if lt IE 9]>
+<script type="text/javascript" src="../../lib/html5shiv.js"></script>
+<script type="text/javascript" src="../../lib/respond.min.js"></script>
+<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../../static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="../../lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="../../static/h-ui.admin/css/style.css" />
+	<!--[if IE 6]>
+<script type="text/javascript" src="../../lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+	<!--/meta 作为公共模版分离出去-->
+	<title></title>
+</head>
+
+<body>
+	<article class="page-container">
+		<form class="form form-horizontal" id="form1" onsubmit="return false" >
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>机构名称：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="机构名称：" id="str1" name="str1">
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">机构属性：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str2">
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">所属行业：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str3">
+				</div>
+			</div>
+
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">资产规模（万元）：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str4">
+				</div>
+			</div>
+
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">实际控制人：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str5">
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">机构情况：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str6">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">推进情况：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str7">
+				</div>
+			</div>
+
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">联系人：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str8">
+				</div>
+			</div> 
+			
+			<div class="row cl">
+				<label class="form-label col-xs-4 col-sm-3">联系电话：</label>
+				<div class="formControls col-xs-8 col-sm-8">
+					<input type="text" class="input-text" value="" placeholder="" id="str9">
+				</div>
+			</div> 
+			
+						
+			<br />
+			<div class="row cl">
+				<div style="text-align: center">
+					<input class="btn btn-primary radius" runat="server" id="btnSubmit" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" />
+					&nbsp;&nbsp;
+					<button onclick="layer_close();" class="btn btn-default radius" type="button">
+						&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+				</div>
+			</div>
+		</form>
+	</article>
+	<!--_footer 作为公共模版分离出去-->
+
+	<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="../../lib/layer/2.4/layer.js"></script>
+
+	<script type="text/javascript" src="../../static/h-ui/js/H-ui.min.js"></script>
+
+	<script type="text/javascript" src="../../static/h-ui.admin/js/H-ui.admin.js"></script>
+
+	<!--/_footer 作为公共模版分离出去-->
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="../../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="../../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+
+	<script type="text/javascript" src="../../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+
+	<script type="text/javascript" src="../../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+	<script type="text/javascript" src="../../js/ApiUrl.js"></script>
+
+	<script type="text/javascript" src="../../js/Authority.js"></script>
+	<script type="text/javascript">
+		$(function () {	    
+		    //1.获取url中的id参数
+			var parse = getParseUrl() || [];
+			var id = parse["id"];
+		
+			var nameArr = [];
+			var formArr = getFormValue();
+			nameArr = Object.keys(formArr.data);
+
+			var detailFun = function () {
+				function fiilFormData(nameArr, json) {
+					if (nameArr.length > 0) {
+						nameArr.forEach(function (item, index) {
+							if (json[item] != undefined) {
+								$("#" + item + "").val(json[item])
+							} else {
+								$("#" + item + "").val('');
+							}
+						})
+					}
+				}
+
+				function getDetail() {
+					$.ajax({
+						type: "POST",
+						url: ES.info.infoDetail,
+						dataType: "json",
+						data: {
+							id: id
+						},
+						ok: function (resp) {
+							var json = resp.data; //得到api的列表数据
+							console.log(json);
+							fiilFormData(nameArr, json);
+						}
+					})
+				}
+				getDetail(); //执行获取电梯数据方法
+			}
+
+			function pageTypeFun() {
+				detailFun();
+				nameArr.forEach(function (item, index) {
+					//$("#" + item + "").attr("disabled", "true");
+				})
+			}
+			pageTypeFun();
+		    
+			$("#tab-category").Huitab({
+				index: 0
+			});
+
+			function validateForm() {
+				return $("#form1").validate({
+					rules: {
+						str1: { required: true }
+					},
+					onkeyup: false,
+					focusCleanup: true,
+					success: "valid",
+				}).form();
+			}
+
+			function doSubmit() {
+				if (validateForm()) {
+					var url = ES.info.infoUpdate;
+					var formData = getFormValue(); //获取所有表单元素
+					formData.data["id"] = id;
+					formData.data["infoKind"] = 7;
+					
+					var data = JSON.stringify(formData.data)
+					console.log(data);
+					if (formData.isLegal) {
+						$.ajax({
+							type: "POST",
+							url: url,
+							contentType: "application/json",
+							dataType: "json",
+							data: data,
+							ok: function (resp) {
+								layer.alert("提示：操作成功！", function () {
+									var index = parent.layer.getFrameIndex(window.name);
+									parent.$('#butSearch').click(); //点击父页面的查询按钮
+									parent.layer.close(index);
+								});
+							}
+						})
+					}
+
+				}
+			}
+			$("#btnSubmit").click(function () {
+				doSubmit();
+			})
+		});
+	</script>
+
+	<!--/请在上方写此页面业务相关的脚本-->
+</body>
+
+</html>
