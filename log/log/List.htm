@@ -46,7 +46,8 @@
             <span class="l">
                <button id="butExport" class="btn btn-primary radius" >
                     <i class="Hui-iconfont">&#xe644;</i> 导出</button>&nbsp;&nbsp;
-                    
+
+                    &nbsp;
              </span><span class="r">共有数据：<strong class="listDataTotal">0</strong> 条</span>
         </div>
         <!--数据表格-->
@@ -101,7 +102,7 @@
 
     <script type="text/javascript">
         var w1=800,h1=450;
-        var infokind="1";
+        var logtype="0";
         
         var parse = getParseUrl() || [];
 		var logType = parse["logType"];
@@ -148,6 +149,40 @@
             });
             //设置初始的数据
             setTableData();
+        });
+
+        //导出数据
+        $('#butExport').click(function() {
+            console.log(666);
+            var listId = '';
+            var checkedBox = $("input[name='seledoc']:checked");
+            if (checkedBox.length > 0)
+            {
+                $("input[name='seledoc']:checked").each(function (index) {
+                    if (index == 0) {
+                        listId = $(this).val();
+                    } else {
+                        listId += ',' + $(this).val();
+                    }
+                });
+            }
+
+            $.ajax({
+                type: "POST",
+                url: ES.log.logExport,
+                data: {
+                    logType: logType,
+                    time0: $('#time0').val(),
+                    time1: $('#time1').val(),
+                    operatContent: $('#operatContent').val()
+                },
+                ok: function(resp) {
+                    var title = "导出【日志】数据";
+                    var url = "log2_export.htm?downFile="+resp.data;
+                    layer_show(title, url, 400, 300);
+                    return false;
+                }
+            })
         });
         
         
