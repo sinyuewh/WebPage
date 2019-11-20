@@ -25,14 +25,14 @@
 <body>
     <nav class="breadcrumb">
         <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 信息管理 <span class="c-gray en">&gt;</span>
-        重点产业 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+        重点实验室 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            产业名称：<input type="text" id="str1" class="input-text" placeholder="产业名称" style="width: 200px" />
-            &nbsp;&nbsp; 特色领域：<input type="text" id="str2" class="input-text" placeholder="特色领域"
+            实验室名称：<input type="text" id="str1" class="input-text" placeholder="实验室名称" style="width: 200px" />
+            &nbsp;&nbsp; 隶属单位：<input type="text" id="str2" class="input-text" placeholder="隶属单位"
                 style="width: 200px" />
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
@@ -63,23 +63,31 @@
                             序号
                         </th>
                         <th>
-                            产业名称
+                            实验室名称
                         </th>
                         <th>
-                            特色领域
+                            隶属单位
                         </th>
                         <th>
-                            组织管理机构
+                            实验室类型
                         </th>
                         <th>
-                            基础条件
+                            年度总经费
+                        </th>
+                       <!--list不显示-->
+                       <!-- <th>
+                            资金来源
                         </th>
                         <th>
-                            政策制度
+                            军费占比
                         </th>
-                        <th>
-                            推进情况
-                        </th>
+
+                       <th>
+                           实验室情况
+                       </th>
+                       <th>
+                           推进情况
+                       </th>-->
                         <th>
                             联系人
                         </th>
@@ -132,11 +140,16 @@
                     { "data": "col4"},
                     { "data": "col5"},
                     { "data": "col6"},
-                    { "data": "col7"},
-                    { "data": "col8"},
-                    { "data": "col9"},
-                    { "data": "col10"},
-                    { "data": "col12"},   
+                    //list不显示
+                    /* { "data": "col7"},
+                     { "data": "col8"},
+
+                      { "data": "col9"},
+                      { "data": "col10"},*/
+                    { "data": "col11"},
+                    { "data": "col12"},
+                    { "data": "col13"},
+
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -162,7 +175,7 @@
 
             //新增数据
             $('#butAdd').click(function () {
-                var title = "添加【重点产业】";
+                var title = "添加【重点实验室】";
                 var url = "info1_Add.htm";
                 layer_show(title, url, w1, h1);
                 return false;
@@ -170,7 +183,7 @@
             
             //导入数据
             $('#butImport').click(function() {
-                var title = "导入【重点产业】";
+                var title = "导入【重点实验室】";
                 var url = "info1_import.htm";
                 layer_show(title, url, 601, 350);
                 return false;
@@ -238,7 +251,7 @@
                         ids: listId,
                     },
                     ok: function(resp) {
-                    var title = "导出【重点产业】数据";
+                    var title = "导出【重点实验室】数据";
                         var url = "info1_export.htm?downFile="+resp.data;
                         layer_show(title, url, 400, 300); 
                         return false;
@@ -255,7 +268,7 @@
         });
         //数据详细
         function checkDetall(ID) {
-            var title = "【重点产业】详细";
+            var title = "【重点实验室】详细";
             var url = "info1_Detail.htm?id="+ID;
             layer_show(title, url, w1, h1);
         }
@@ -298,12 +311,14 @@
                 jsonObject["col4"] = data["str2"];
                 jsonObject["col5"] = data["str3"];
                 jsonObject["col6"] = data["str4"];
-                jsonObject["col7"] = data["str5"];
+                //list不显示
+                /*jsonObject["col7"] = data["str5"];
                 jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["str7"];
-                jsonObject["col10"] = data["str8"];
-                //jsonObject["col11"] = "0";
-                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
+                jsonObject["col9"] = data["txt1"];
+                jsonObject["col10"] = data["txt2"];*/
+                jsonObject["col11"] = data["str9"];
+                jsonObject["col12"] = data["str10"];
+                jsonObject["col13"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>";
 
                 data1.push(jsonObject);

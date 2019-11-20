@@ -67,7 +67,9 @@
                         <th>
                             注册地
                         </th>
-                        <th>
+
+                        <!--list隐藏-->
+                        <!--<th>
                             成立时间
                         </th>
                         <th>
@@ -79,7 +81,8 @@
                         </th>
                         <th>
                             注册资金（万元）
-                        </th>
+                        </th>-->
+
                         <th>
                             是否上市
                         </th>
@@ -87,7 +90,7 @@
                             年度主营业务
                             <br />收入（万元）
                         </th>
-                        <th>
+                      <!--  <th>
                             年度军品业务
                             <br />收入（万元）
                         </th>
@@ -108,7 +111,7 @@
                         </th>
                         <th>
                             推进情况
-                        </th>
+                        </th>-->
                         <th>
                             联系人
                         </th>
@@ -158,21 +161,21 @@
                 "columns": [
                     { "data": "col1"},
                     { "data": "col2"},
-                    { "data": "col3"},
-                    { "data": "col4"},
-                    { "data": "col5"},
-                    { "data": "col6"},
-                    { "data": "col7"},
-                    { "data": "col8"},
-                    { "data": "col9"},
-                    { "data": "col10"},
-                    { "data": "col11"}, 
+                    { "data": "col3"},//单位名称
+                    { "data": "col4"},//注册地
+                    /*{ "data": "col5"},//成立时间
+                    { "data": "col6"},//单位性质
+                    { "data": "col7"},//统一。。。
+                    { "data": "col8"},//注册资金*/
+                    { "data": "col9"},//是否上市
+                    { "data": "col10"},//年度主营业收入
+                   /* { "data": "col11"},
                     { "data": "col12"},
                     { "data": "col13"},
-                    { "data": "col14"},
+                    { "data": "col14"},//有关资质
                     { "data": "col15"},  
-                    { "data": "col16"}, 
-                    { "data": "col17"},
+                    { "data": "col16"}, */
+                    { "data": "col17"}, //联系人
                     { "data": "col18"},
                     { "data": "col19"},
                 ],
@@ -333,21 +336,21 @@
                 
                 jsonObject["col1"] = "<input type='checkbox' value='" + data["id"] + "' name='seledoc'>";
                 jsonObject["col2"] = (i+1);
-                jsonObject["col3"] = data["str1"];
-                jsonObject["col4"] = data["str2"];
-                jsonObject["col5"] = data["str3"];
+                jsonObject["col3"] = data["str1"];//单位名称
+                jsonObject["col4"] = data["str2"];//注册地
+                /*jsonObject["col5"] = data["str3"];
                 jsonObject["col6"] = data["str4"];
                 jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["str7"];
-                jsonObject["col10"] = data["str8"];
-                jsonObject["col11"] = data["str9"];
+                jsonObject["col8"] = data["str6"];*/
+                jsonObject["col9"] = data["str7"];//是否上市
+                jsonObject["col10"] = data["str8"];//年度主营业务收入
+                /*jsonObject["col11"] = data["str9"];
                 jsonObject["col12"] = data["str10"];
                 jsonObject["col13"] = data["str11"];
                 jsonObject["col14"] = data["str12"];
                 jsonObject["col15"] = data["str13"];
-                jsonObject["col16"] = data["str14"];
-                jsonObject["col17"] = data["str15"];
+                jsonObject["col16"] = data["str14"];*/
+                jsonObject["col17"] = data["str15"];//联系人
                 jsonObject["col18"] = data["str16"];     
                 jsonObject["col19"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>";

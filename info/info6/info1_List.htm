@@ -68,22 +68,7 @@
                             院（系）名称
                         </th>
                         <th>
-                            相关教学
-                        </th>
-                        <th>
-                            科研教师数量
-                        </th>
-                        <th>
-                            培养军地两<br />用人才数量
-                        </th>
-                        <th>
-                            特色教学
-                        </th>
-                        <th>
-                            院（系）情况
-                        </th>
-                        <th>
-                            推进情况
+                            特色学科
                         </th>
                         <th>
                             联系人
@@ -134,17 +119,17 @@
                 "columns": [
                     { "data": "col1"},
                     { "data": "col2"},
-                    { "data": "col3"},
-                    { "data": "col4"},
-                    { "data": "col5"},
-                    { "data": "col6"},
-                    { "data": "col7"},
-                    { "data": "col8"},
-                    { "data": "col9"},
-                    { "data": "col10"},
+                    { "data": "col3"},//院校名称
+                    { "data": "col4"},//院系名称
+                    /*{ "data": "col5"},
+                    { "data": "col6"},*/
+                    { "data": "col7"},//特色学科
+                   /* { "data": "col8"},
+                    { "data": "col9"},*/
+                    { "data": "col10"},//联系人
                     { "data": "col11"}, 
                     { "data": "col12"},
-                    { "data": "col13"},
+                    /*{ "data": "col13"},*/
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -305,15 +290,15 @@
                 jsonObject["col2"] = (i+1);
                 jsonObject["col3"] = data["str1"];
                 jsonObject["col4"] = data["str2"];
-                jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str4"];
+                /*jsonObject["col5"] = data["str3"];
+                jsonObject["col6"] = data["str4"];*/
                 jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["str7"];
+                /*jsonObject["col8"] = data["str6"];
+                jsonObject["col9"] = data["str7"];*/
                 jsonObject["col10"] = data["str8"];
                 jsonObject["col11"] = data["str9"];
-                jsonObject["col12"] = data["str10"];                   
-                jsonObject["col13"] = "<a href='javascript:checkDetall(" + data["id"] +
+                /*jsonObject["col12"] = data["str10"]; */
+                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>";
 
                 data1.push(jsonObject);

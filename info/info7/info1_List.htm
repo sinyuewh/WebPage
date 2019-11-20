@@ -67,13 +67,13 @@
                         <th>
                             机构属性
                         </th>
-                        <th>
+                        <!--<th>
                             所属行业
-                        </th>
+                        </th>-->
                         <th>
                             资产规模（万元）
                         </th>
-                        <th>
+                        <!--<th>
                             实际控制人
                         </th>
                         <th>
@@ -81,7 +81,7 @@
                         </th>
                         <th>
                             推进情况
-                        </th>
+                        </th>-->
                         <th>
                             联系人
                         </th>
@@ -131,14 +131,14 @@
                 "columns": [
                     { "data": "col1"},
                     { "data": "col2"},
-                    { "data": "col3"},
-                    { "data": "col4"},
-                    { "data": "col5"},
-                    { "data": "col6"},
-                    { "data": "col7"},
-                    { "data": "col8"},
-                    { "data": "col9"},
-                    { "data": "col10"},
+                    { "data": "col3"},//机构名称
+                    { "data": "col4"},//机构属性
+                    /*{ "data": "col5"},*/
+                    { "data": "col6"},//资产规模
+                    /*{ "data": "col7"},//实际控制人
+                    { "data": "col8"},情况
+                    { "data": "col9"},情况*/
+                    { "data": "col10"},//联系人
                     { "data": "col11"}, 
                     { "data": "col12"},
                 ],
@@ -299,13 +299,13 @@
                 
                 jsonObject["col1"] = "<input type='checkbox' value='" + data["id"] + "' name='seledoc'>";
                 jsonObject["col2"] = (i+1);
-                jsonObject["col3"] = data["str1"];
-                jsonObject["col4"] = data["str2"];
-                jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str4"];
-                jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["str7"];
+                jsonObject["col3"] = data["str1"];//机构名称
+                jsonObject["col4"] = data["str2"];//机构属性
+                /*jsonObject["col5"] = data["str3"];*/
+                jsonObject["col6"] = data["str4"];//资产规模
+                /*jsonObject["col7"] = data["str5"];
+                jsonObject["col8"] = data["txt1"];情况
+                jsonObject["col9"] = data["txt2"];情况    */
                 jsonObject["col10"] = data["str8"];
                 jsonObject["col11"] = data["str9"];                 
                 jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +

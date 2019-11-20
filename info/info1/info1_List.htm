@@ -71,7 +71,9 @@
                         <th>
                             组织管理机构
                         </th>
-                        <th>
+
+                       <!--不显示多行文本-->
+                        <!--<th>
                             基础条件
                         </th>
                         <th>
@@ -79,7 +81,8 @@
                         </th>
                         <th>
                             推进情况
-                        </th>
+                        </th>-->
+
                         <th>
                             联系人
                         </th>
@@ -131,9 +134,11 @@
                     { "data": "col3"},
                     { "data": "col4"},
                     { "data": "col5"},
+                    //不显示多行文本
+                    /*
                     { "data": "col6"},
                     { "data": "col7"},
-                    { "data": "col8"},
+                    { "data": "col8"},*/
                     { "data": "col9"},
                     { "data": "col10"},
                     { "data": "col12"},   
@@ -143,7 +148,7 @@
                 ], //默认第几个排序
                 "bStateSave": true, //状态保存
                 "aoColumnDefs": [
-                    // { "bVisible": false, "aTargets": [0] }, //控制列的隐藏显示
+                    //{ "bVisible": false, "aTargets": [0] }, //控制列的隐藏显示
                     {
                         "orderable": false,
                         "aTargets": [0]
@@ -297,9 +302,10 @@
                 jsonObject["col3"] = data["str1"];
                 jsonObject["col4"] = data["str2"];
                 jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str4"];
-                jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];
+                //不显示多行文本
+                /* jsonObject["col6"] = data["txt1"];
+                 jsonObject["col7"] = data["txt2"];
+                 jsonObject["col8"] = data["txt3"];*/
                 jsonObject["col9"] = data["str7"];
                 jsonObject["col10"] = data["str8"];
                 //jsonObject["col11"] = "0";
