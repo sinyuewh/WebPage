@@ -47,13 +47,15 @@ ES.LoginApi = {
 //信息管理
 ES.info = {
 	/*  信息管理操作接口 */
-	infoCreate: ES.svrUrl + '/web/info/create',         //新增信息
-	infoUpdate: ES.svrUrl + '/web/info/update',         //更新信息
-	infoDelete: ES.svrUrl + '/web/info/delete',         //删除信息
-	infoDetail: ES.svrUrl + '/web/info/detail',         //信息明细
-	infoExport: ES.svrUrl + '/web/info/export',         //导出信息的数据
-	infoImport: ES.svrUrl + '/web/info/import',         //导入信息的数据
-	infoList:   ES.svrUrl + '/web/info/list',           //信息列表
+	infoCreate:             ES.svrUrl + '/web/info/create',         //新增信息
+	infoUpdate:             ES.svrUrl + '/web/info/update',         //更新信息
+	infoDelete:             ES.svrUrl + '/web/info/delete',         //删除信息
+	infoDetail:             ES.svrUrl + '/web/info/detail',         //信息明细
+	infoExport:             ES.svrUrl + '/web/info/export',         //导出信息的数据
+	infoImport:             ES.svrUrl + '/web/info/import',         //导入信息的数据
+	infoList:               ES.svrUrl + '/web/info/list',           //信息列表
+	infoFieldList:          ES.svrUrl + '/web/info/fieldList',      //字段信息列表
+	infoDetailToWord:       ES.svrUrl + '/web/info/exportToWord',   //导入单条数据到Word
 };
 
 

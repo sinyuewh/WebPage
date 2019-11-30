@@ -127,7 +127,7 @@
 			nameArr = Object.keys(formArr.data);
 
 			var detailFun = function () {
-				function fiilFormData(nameArr, json) {
+				function fiilFormData(nameArr, json) {				
 					if (nameArr.length > 0) {
 						nameArr.forEach(function (item, index) {
 							if (json[item] != undefined) {
@@ -135,8 +135,19 @@
 							} else {
 								$("#" + item + "").val('');
 							}
+							
+							//===添加onChange事件=====
+							$("#" + item + "").change(function(){
+							    $("#btnSubmit").removeAttr("disabled");
+							    //$("#btnSubmit").attr("disabled", "false");
+							    $("#btnSubmit").attr("title", "");
+							});
 						})
 					}
+					
+					//默认不允许编辑
+					$("#btnSubmit").attr("disabled", "true");
+					$("#btnSubmit").attr("title", "没有修改，不能提交");
 				}
 
 				function getDetail() {

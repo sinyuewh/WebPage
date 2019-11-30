@@ -30,9 +30,9 @@
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            院校名称：<input type="text" id="str1" class="input-text" placeholder="院校名称" style="width: 200px" />
+            院校名称：<input type="text" id="str1" class="input-text" placeholder="院校名称" style="width: 200px" list="selectValues" />
             &nbsp;&nbsp; 院（系）名称：<input type="text" id="str2" class="input-text" placeholder="院（系）名称"
-                style="width: 200px" />
+                style="width: 200px" /><datalist id="selectValues"></datalist>
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
                 <i class="Hui-iconfont">&#xe665;</i> 查询</button>
@@ -157,7 +157,13 @@
             $('#butAdd').click(function () {
                 var title = "添加【重点院校】";
                 var url = "info1_Add.htm";
-                layer_show(title, url, w1, h1);
+                //layer_show(title, url, w1, h1);
+                var index = layer.open({
+		            type: 2,
+		            title: title,
+		            content: url
+	                });
+	            layer.full(index);
                 return false;
             });
             
@@ -246,12 +252,43 @@
             });
             //设置初始的数据
             setTableData();
+            
+            //设置下拉框的选择项
+            var t1="<option value='{0}'>";
+            var selectValue="";
+            $.ajax({
+                type: "POST",
+                url: ES.info.infoFieldList,
+                data: {
+                    infoKind: infokind,
+                    fieldName: 'str1',
+                },
+                ok: function (resp) {
+                    var json = resp.data.content; //得到api的列表数据
+                    //设置数据总数
+                    for (var i = 0, l = json.length; i < l; i++)
+                    {
+                       var data = json[i];
+                       if(data["str1"]!=null && data["str1"].toString().length>0)
+                       {
+                           selectValue=selectValue+t1.replace("{0}",data["str1"]);
+                       }
+                    }
+                    $("#selectValues").append(selectValue);
+                }
+            })
         });
         //数据详细
         function checkDetall(ID) {
             var title = "【重点院校】详细";
             var url = "info1_Detail.htm?id="+ID;
-            layer_show(title, url, w1, h1);
+            //layer_show(title, url, w1, h1);
+            var index = layer.open({
+		            type: 2,
+		            title: title,
+		            content: url
+	                });
+	        layer.full(index);
         }
 
         //1--得到Api的数据并填充表格
@@ -299,7 +336,9 @@
                 jsonObject["col11"] = data["str9"];
                 /*jsonObject["col12"] = data["str10"]; */
                 jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
-                    ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>";
+                    ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>"
+                        +"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:importToWord(" + data["id"] +
+                    ");' class='maincolor'><i class='Hui-iconfont'>&#xe641;</i> word导出</a>";
 
                 data1.push(jsonObject);
             }
@@ -308,6 +347,24 @@
             table.rows.add(data1).draw().nodes().to$().addClass('text-c');
             table.columns.adjust().draw();
             $('.table-sort').css('width', '100%')
+        }
+        
+        //将单条数据导出到Word
+        function importToWord(ID)
+        {
+            $.ajax({
+                type: "POST",
+                url: ES.info.infoDetailToWord,
+                data: {
+                    id: ID,
+                },
+                ok: function(resp) {
+                    var title = "导出【重点院校】数据";
+                    var url = "info1_export.htm?downFile="+resp.data;
+                    layer_show(title, url, 400, 300); 
+                    return false;
+                }
+            });
         }
     </script>
 
