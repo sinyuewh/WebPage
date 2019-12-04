@@ -30,9 +30,29 @@
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            姓名：<input type="text" id="str1" class="input-text" placeholder="姓名" style="width: 200px" list="selectValues" />
-            &nbsp;&nbsp; 分类：<input type="text" id="str2" class="input-text" placeholder="分类"
-                style="width: 200px" /><datalist id="selectValues"></datalist>
+            条件项： <span class="select-box inline">
+                <select name="str1" id="str1" class="select" style="width: 150px">
+                    <option value="str1">姓名</option>
+                    <option value="str2">分类</option>
+                    <option value="str3">工作单位</option>
+                    <option value="str4">职务</option>
+                    <option value="str5">手机</option>
+                    
+                    <option value="str6">办公电话</option>
+                    <option value="str7">办公地址</option>     
+                    
+                    <option value="str8">电子邮件</option>
+                    <option value="str9">备注</option>
+
+                </select>
+            </span>&nbsp;&nbsp; 条件项的值：<!--list="selectValues"-->
+            <input type="text" id="str2" class="input-text" placeholder="条件项的值" style="width: 400px"
+                 />
+                
+            <datalist id="selectValues"></datalist>
+            <span style="display:none">
+            &nbsp;&nbsp; 特色领域：<input type="text" id="str3" class="input-text" placeholder="特色领域"
+                style="width: 200px" /></span>
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
                 <i class="Hui-iconfont">&#xe665;</i> 查询</button>

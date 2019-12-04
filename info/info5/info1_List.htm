@@ -30,9 +30,38 @@
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            单位名称：<input type="text" id="str1" class="input-text" placeholder="单位名称" style="width: 200px" list="selectValues" />
-            &nbsp;&nbsp; 注册地：<input type="text" id="str2" class="input-text" placeholder="注册地"
-                style="width: 200px" /><datalist id="selectValues"></datalist>
+            条件项： <span class="select-box inline">
+                <select name="str1" id="str1" class="select" style="width: 150px">
+                    <option value="str1">单位名称</option>
+                    <option value="str2">注册地</option>
+                    <option value="str3">成立时间</option>
+                    <option value="str4">单位性质</option>
+                    
+                    <option value="str5">统一社会信用代码</option>
+                    <option value="str6">注册资金（万元）</option>
+                    <option value="str7">是否上市</option>
+                    <option value="str8">年度主营业务收入（万元）</option>
+                    
+                    <option value="str9">年度军品业务收入（万元）</option>
+                    <option value="str10">年度研发投入（万元）</option>
+                    <option value="str11">年度军品研发投入（万元）</option>
+                    <option value="str12">国防和军队建设有关资质</option>
+                    
+                    <option value="txt1">单位情况</option>
+                    <option value="txt2">推进情况</option>     
+                    
+                    <option value="str15">联系人</option>
+                    <option value="str16">联系电话</option>
+
+                </select>
+            </span>&nbsp;&nbsp; 条件项的值： <!--list="selectValues"-->
+            <input type="text" id="str2" class="input-text" placeholder="条件项的值" style="width: 400px"
+                />
+                
+            <datalist id="selectValues"></datalist>
+            <span style="display:none">
+            &nbsp;&nbsp; 特色领域：<input type="text" id="str3" class="input-text" placeholder="特色领域"
+                style="width: 200px" /></span>
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
                 <i class="Hui-iconfont">&#xe665;</i> 查询</button>
@@ -68,21 +97,6 @@
                             注册地
                         </th>
 
-                        <!--list隐藏-->
-                        <!--<th>
-                            成立时间
-                        </th>
-                        <th>
-                            单位性质
-                        </th>
-                        <th>
-                            统一社会
-                            <br />信用代码
-                        </th>
-                        <th>
-                            注册资金（万元）
-                        </th>-->
-
                         <th>
                             是否上市
                         </th>
@@ -90,34 +104,24 @@
                             年度主营业务
                             <br />收入（万元）
                         </th>
-                      <!--  <th>
-                            年度军品业务
-                            <br />收入（万元）
-                        </th>
-                        <th>
-                            年度研发
-                            <br />投入（万元）
-                        </th>
-                        <th>
-                            年度军品
-                            <br />研发投入（万元）
-                        </th>
-                        <th>
-                            国防和军队
-                            建设<br />有关资质
-                        </th>
-                        <th>
-                            单位情况
-                        </th>
-                        <th>
-                            推进情况
-                        </th>-->
+                      
                         <th>
                             联系人
                         </th>
                         <th>
                             联系电话
                         </th>
+                        
+                        <th>
+                            上报单位
+                        </th>
+                        <th>
+                            上报时间
+                        </th>
+                        <th>
+                            ABC分类
+                        </th>
+                        
                         <th>
                             操作
                         </th>
@@ -161,23 +165,16 @@
                 "columns": [
                     { "data": "col1"},
                     { "data": "col2"},
-                    { "data": "col3"},//单位名称
-                    { "data": "col4"},//注册地
-                    /*{ "data": "col5"},//成立时间
-                    { "data": "col6"},//单位性质
-                    { "data": "col7"},//统一。。。
-                    { "data": "col8"},//注册资金*/
-                    { "data": "col9"},//是否上市
-                    { "data": "col10"},//年度主营业收入
-                   /* { "data": "col11"},
-                    { "data": "col12"},
-                    { "data": "col13"},
-                    { "data": "col14"},//有关资质
-                    { "data": "col15"},  
-                    { "data": "col16"}, */
-                    { "data": "col17"}, //联系人
-                    { "data": "col18"},
-                    { "data": "col19"},
+                    { "data": "col3"},
+                    { "data": "col4"},
+                    { "data": "col5"},
+                    { "data": "col6"},
+                    { "data": "col7"},
+                    { "data": "col8"},
+                    { "data": "col9"},
+                    { "data": "col10"},
+                    { "data": "col11"},
+                    { "data": "col12"}
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -373,23 +370,18 @@
                 
                 jsonObject["col1"] = "<input type='checkbox' value='" + data["id"] + "' name='seledoc'>";
                 jsonObject["col2"] = (i+1);
-                jsonObject["col3"] = data["str1"];//单位名称
-                jsonObject["col4"] = data["str2"];//注册地
-                /*jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str4"];
-                jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];*/
-                jsonObject["col9"] = data["str7"];//是否上市
-                jsonObject["col10"] = data["str8"];//年度主营业务收入
-                /*jsonObject["col11"] = data["str9"];
-                jsonObject["col12"] = data["str10"];
-                jsonObject["col13"] = data["str11"];
-                jsonObject["col14"] = data["str12"];
-                jsonObject["col15"] = data["str13"];
-                jsonObject["col16"] = data["str14"];*/
-                jsonObject["col17"] = data["str15"];//联系人
-                jsonObject["col18"] = data["str16"];     
-                jsonObject["col19"] = "<a href='javascript:checkDetall(" + data["id"] +
+                jsonObject["col3"] = data["str1"];
+                jsonObject["col4"] = data["str2"];
+                jsonObject["col5"] = data["str7"];
+                jsonObject["col6"] = data["str8"];
+                jsonObject["col7"] = data["str15"];
+                jsonObject["col8"] = data["str16"];     
+                
+                jsonObject["col9"] = data["reportName"];
+                jsonObject["col10"] = data["reportTime"];
+                jsonObject["col11"] = data["abc"];
+                
+                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>"
                         +"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:importToWord(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe641;</i> word导出</a>";

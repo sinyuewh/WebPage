@@ -30,9 +30,31 @@
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            项目名称：<input type="text" id="str1" class="input-text" placeholder="项目名称" style="width: 200px" list="selectValues" />
-            &nbsp;&nbsp; 建设单位：<input type="text" id="str2" class="input-text" placeholder="建设单位"
-                style="width: 200px" /><datalist id="selectValues"></datalist>
+            条件项： <span class="select-box inline">
+                <select name="str1" id="str1" class="select" style="width: 150px">
+                    <option value="str1">项目名称</option>
+                    <option value="str2">是否立项</option>
+                    <option value="str3">投资规模（万元）</option>
+                    <option value="str4">起止时间</option>
+                    <option value="str5">建设单位</option>
+                    <option value="str6">下达单位</option>
+                    <option value="str7">资金来源</option>
+                    <option value="str8">军费占比</option>
+                    
+                    <option value="txt1">项目情况</option>
+                    <option value="txt2">特点</option>     
+                    <option value="str11">联系人</option>
+                    <option value="str12">联系电话</option>
+
+                </select>
+            </span>&nbsp;&nbsp; 条件项的值：<!--list="selectValues"-->
+            <input type="text" id="str2" class="input-text" placeholder="条件项的值" style="width: 400px"
+                 />
+                
+            <datalist id="selectValues"></datalist>
+            <span style="display:none">
+            &nbsp;&nbsp; 特色领域：<input type="text" id="str3" class="input-text" placeholder="特色领域"
+                style="width: 200px" /></span>
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
                 <i class="Hui-iconfont">&#xe665;</i> 查询</button>
@@ -64,9 +86,6 @@
                         <th>
                             项目名称
                         </th>
-                       <!-- <th>
-                            是否立项
-                        </th>-->
                         <th>
                             投资规模
                         </th>
@@ -77,20 +96,24 @@
                             建设单位
                         </th>
 
-                        <!--list不显示-->
-                        <!--
-                        <th>
-                            项目情况
-                        </th>
-                        <th>
-                            特点
-                        </th>-->
                         <th>
                             联系人
                         </th>
                         <th>
                             联系电话
                         </th>
+                        
+                        <th>
+                            上报单位
+                        </th>
+                        <th>
+                            上报时间
+                        </th>
+                        <th>
+                            ABC分类
+                        </th>
+                        
+                        
                         <th>
                             操作
                         </th>
@@ -132,23 +155,19 @@
             //1--设置表格
             $('.table-sort').dataTable({
                 "columns": [
-                    { "data": "col1"},//勾选框
+                    { "data": "col1"},  //勾选框
                     { "data": "col2"},
-                    { "data": "col3"},//项目名称
-                    //list不显示
-                    /*{ "data": "col4"},*/   //是否立项
-                    { "data": "col5"},//投资规模
-                    { "data": "col6"},//起止时间
-                    { "data": "col7"},//建设单位
-                    /*{ "data": "col8"},//下达单位
+                    { "data": "col3"},  //项目名称
+                    { "data": "col4"},  //投资规模
+                    { "data": "col5"},  //起止时间
+                    { "data": "col6"},  //建设单位
+                    { "data": "col7"},  //下达单位
 
-                    { "data": "col9"},//资金来源
-                    { "data": "col10"},//军费占比
-                    { "data": "col11"},  项目情况和 特点
-                    { "data": "col12"},*/
-                    { "data": "col13"},
-                    { "data": "col14"},
-                    { "data": "col15"},  
+                    { "data": "col8"},  //资金来源
+                    { "data": "col9"},  //军费占比
+                    { "data": "col10"}, // 项目情况和 特点
+                    { "data": "col11"},
+                    { "data": "col12"} 
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -346,18 +365,19 @@
                 jsonObject["col1"] = "<input type='checkbox' value='" + data["id"] + "' name='seledoc'>";
                 jsonObject["col2"] = (i+1);
                 jsonObject["col3"] = data["str1"];
-                /*jsonObject["col4"] = data["str2"];*/
-                jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str4"];
-                jsonObject["col7"] = data["str5"];
-                /*jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["str7"];
-                jsonObject["col10"] = data["str8"];*/
-                /*jsonObject["col11"] = data["txt1"];;
-                jsonObject["col12"] = data["txt2"];;*/
-                jsonObject["col13"] = data["str11"];;
-                jsonObject["col14"] = data["str12"];;
-                jsonObject["col15"] = "<a href='javascript:checkDetall(" + data["id"] +
+                
+                jsonObject["col4"] = data["str3"];
+                jsonObject["col5"] = data["str4"];
+                jsonObject["col6"] = data["str5"];
+                
+                jsonObject["col7"] = data["str11"];
+                jsonObject["col8"] = data["str12"];
+                
+                jsonObject["col9"] = data["reportName"];
+                jsonObject["col10"] = data["reportTime"];
+                jsonObject["col11"] = data["abc"];
+                
+                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>"
                         +"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:importToWord(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe641;</i> word导出</a>";

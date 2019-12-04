@@ -23,8 +23,8 @@
 </head>
 <body>
     <nav class="breadcrumb">
-        <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 信息管理 <span class="c-gray en">&gt;</span>
-        重点区域 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
+        <i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span>
+        上报单位 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
             title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <div class="page-container">
@@ -55,22 +55,14 @@
         <!--操作区设置-->
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
-                <button id="butReport" class="btn btn-primary radius">
-                    <i class="Hui-iconfont">&#xe6ab;</i> 加入上报</button>&nbsp;&nbsp;
-                    
                 <button id="butAdd" class="btn btn-primary radius">
                     <i class="Hui-iconfont">&#xe600;</i> 新增</button>&nbsp;&nbsp;
-                    
                 <button id="butDel" class="btn btn-danger radius">
                     <i class="Hui-iconfont">&#xe6e2;</i> 删除</button>&nbsp;&nbsp;
-                    
-                <button id="butExport" class="btn btn-primary radius">  
+                <button id="butExport" class="btn btn-primary radius">
                     <i class="Hui-iconfont">&#xe644;</i> 导出</button>&nbsp;&nbsp;
-                    
                 <button id="butImport" class="btn btn-primary radius">
-                    <i class="Hui-iconfont">&#xe645;</i> 导入</button>&nbsp;&nbsp; 
-                    
-                    </span><span class="r">
+                    <i class="Hui-iconfont">&#xe645;</i> 导入</button>&nbsp;&nbsp; </span><span class="r">
                         共有数据：<strong class="listDataTotal">0</strong> 条</span>
         </div>
         <!--数据表格-->
@@ -85,28 +77,22 @@
                             序号
                         </th>
                         <th>
-                            区域名称
-                        </th>
-                        <th>
-                            特色领域
-                        </th>
-                        <th>
-                            组织管理机构
+                            单位名称
                         </th>
                         <th>
                             联系人
                         </th>
                         <th>
-                            联系电话
+                            办公电话
                         </th>
                         <th>
-                            上报单位
+                            传真
                         </th>
                         <th>
-                            上报时间
+                            电子邮件
                         </th>
                         <th>
-                            ABC分类
+                            办公地址
                         </th>
                         <th>
                             操作
@@ -156,10 +142,10 @@
                     { "data": "col5"},
                     { "data": "col6"},
                     { "data": "col7"},
-                    { "data": "col8"},
+                    { "data": "col8"},*/
                     { "data": "col9"},
-                    { "data": "col10"},   
-                    { "data": "col11"}
+                    { "data": "col10"},
+                    { "data": "col12"},   
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -239,43 +225,6 @@
                     });
                 } else {
                     layer.msg("错误：请至少选择一条要删除的数据！");
-                }
-
-            });
-            
-            
-            //批量导入上报列表
-            $('#butReport').click(function () {
-                var listId = '';
-                var checkedBox = $("input[name='seledoc']:checked");
-                if (checkedBox.length > 0) {
-                    $("input[name='seledoc']:checked").each(function (index) {
-                        if (index == 0) {
-                            listId = $(this).val();
-                        } else {
-                            listId += ',' + $(this).val();
-                        }
-                    })
-                    layer.confirm('确认要将选中的数据加入到【待报列表】吗？', function (index) {
-                        $.ajax({
-                            type: "POST",
-                            url: ES.info.infoToReportList,
-                            data: {
-                                ids: listId
-                            },
-                            ok: function (resp) {
-                                layer.msg('提示：操作成功!', {
-                                    icon: 1,
-                                    time: 1000
-                                })
-                                //成功后更新列表
-                                setTableData();
-                            }
-                        })
-
-                    });
-                } else {
-                    layer.msg("错误：请至少选择一条要上报的数据！");
                 }
 
             });
@@ -398,14 +347,14 @@
                 jsonObject["col3"] = data["str1"];
                 jsonObject["col4"] = data["str2"];
                 jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str7"];
-                jsonObject["col7"] = data["str8"];
-                
-                jsonObject["col8"] = data["reportName"];
-                jsonObject["col9"] = data["reportTime"];
-                jsonObject["col10"] = data["abc"];
-                
-                jsonObject["col11"] = "<a href='javascript:checkDetall(" + data["id"] +
+                //不显示多行文本
+                /* jsonObject["col6"] = data["txt1"];
+                 jsonObject["col7"] = data["txt2"];
+                 jsonObject["col8"] = data["txt3"];*/
+                jsonObject["col9"] = data["str7"];
+                jsonObject["col10"] = data["str8"];
+                //jsonObject["col11"] = "0";
+                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>"
                         +"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:importToWord(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe641;</i> word导出</a>";

@@ -31,9 +31,28 @@
     <div class="page-container">
         <!--查询区设置-->
         <div class="text-c">
-            实验室名称：<input type="text" id="str1" class="input-text" placeholder="实验室名称" style="width: 200px" list="selectValues" />
-            &nbsp;&nbsp; 隶属单位：<input type="text" id="str2" class="input-text" placeholder="隶属单位"
-                style="width: 200px" /><datalist id="selectValues"></datalist>
+            条件项： <span class="select-box inline">
+                <select name="str1" id="str1" class="select" style="width: 150px">
+                    <option value="str1">实验室名称</option>
+                    <option value="str2">隶属单位</option>
+                    <option value="str3">实验室类型</option>
+                    <option value="str4">年度总经费</option>
+                    <option value="str5">资金来源</option>
+                    <option value="str6">军费占比</option>
+                    <option value="txt1">实验室情况</option>
+                    <option value="txt2">推进情况</option>     
+                    <option value="str9">联系人</option>
+                    <option value="str10">联系电话</option>
+
+                </select>
+            </span>&nbsp;&nbsp; 条件项的值：<!--list="selectValues"--> 
+            <input type="text" id="str2" class="input-text" placeholder="条件项的值" style="width: 400px"
+                />
+                
+            <datalist id="selectValues"></datalist>
+            <span style="display:none">
+            &nbsp;&nbsp; 特色领域：<input type="text" id="str3" class="input-text" placeholder="特色领域"
+                style="width: 200px" /></span>
             &nbsp;&nbsp;
             <button class="btn btn-success radius" id="butSearch" name="">
                 <i class="Hui-iconfont">&#xe665;</i> 查询</button>
@@ -74,25 +93,20 @@
                         <th>
                             年度总经费
                         </th>
-                       <!--list不显示-->
-                       <!-- <th>
-                            资金来源
-                        </th>
-                        <th>
-                            军费占比
-                        </th>
-
-                       <th>
-                           实验室情况
-                       </th>
-                       <th>
-                           推进情况
-                       </th>-->
                         <th>
                             联系人
                         </th>
                         <th>
                             联系电话
+                        </th>
+                        <th>
+                            上报单位
+                        </th>
+                        <th>
+                            上报时间
+                        </th>
+                        <th>
+                            ABC分类
                         </th>
                         <th>
                             操作
@@ -140,15 +154,12 @@
                     { "data": "col4"},
                     { "data": "col5"},
                     { "data": "col6"},
-                    //list不显示
-                    /* { "data": "col7"},
-                     { "data": "col8"},
-
-                      { "data": "col9"},
-                      { "data": "col10"},*/
+                    { "data": "col7"},
+                    { "data": "col8"},
+                    { "data": "col9"},
+                    { "data": "col10"},
                     { "data": "col11"},
-                    { "data": "col12"},
-                    { "data": "col13"},
+                    { "data": "col12"}
 
                 ],
                 "aaSorting": [
@@ -348,14 +359,14 @@
                 jsonObject["col4"] = data["str2"];
                 jsonObject["col5"] = data["str3"];
                 jsonObject["col6"] = data["str4"];
-                //list不显示
-                /*jsonObject["col7"] = data["str5"];
-                jsonObject["col8"] = data["str6"];
-                jsonObject["col9"] = data["txt1"];
-                jsonObject["col10"] = data["txt2"];*/
-                jsonObject["col11"] = data["str9"];
-                jsonObject["col12"] = data["str10"];
-                jsonObject["col13"] = "<a href='javascript:checkDetall(" + data["id"] +
+                jsonObject["col7"] = data["str9"];
+                jsonObject["col8"] = data["str10"];
+                
+                jsonObject["col9"] = data["reportName"];
+                jsonObject["col10"] = data["reportTime"];
+                jsonObject["col11"] = data["abc"];
+                
+                jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe665;</i> 详细</a>"
                         +"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:importToWord(" + data["id"] +
                     ");' class='maincolor'><i class='Hui-iconfont'>&#xe641;</i> word导出</a>";
