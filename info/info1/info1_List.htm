@@ -55,8 +55,11 @@
         <!--操作区设置-->
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
-                <button id="butReport" class="btn btn-primary radius">
-                    <i class="Hui-iconfont">&#xe6ab;</i> 加入上报</button>&nbsp;&nbsp;
+                <button id="butReport" class="btn btn-primary radius" title="加入【待报列表】">
+                    <i class="Hui-iconfont">&#xe6ab;</i> 上报</button>&nbsp;&nbsp;
+                    
+                 <button id="butKind" class="btn btn-primary radius" title="将数据按【ABC分类】">
+                    <i class="Hui-iconfont">&#xe681;</i> 分类</button>&nbsp;&nbsp;
                     
                 <button id="butAdd" class="btn btn-primary radius">
                     <i class="Hui-iconfont">&#xe600;</i> 新增</button>&nbsp;&nbsp;
@@ -243,9 +246,10 @@
 
             });
             
-            
+            /*--------------------------------------------------------------------------------------*/
             //批量导入上报列表
             $('#butReport').click(function () {
+                alert("butReport");
                 var listId = '';
                 var checkedBox = $("input[name='seledoc']:checked");
                 if (checkedBox.length > 0) {
@@ -277,8 +281,31 @@
                 } else {
                     layer.msg("错误：请至少选择一条要上报的数据！");
                 }
-
             });
+            
+            //设置数据的分类
+            $('#butKind').click(function () {
+                var listId = '';
+                var checkedBox = $("input[name='seledoc']:checked");
+                if (checkedBox.length > 0) {
+                    $("input[name='seledoc']:checked").each(function (index) {
+                        if (index == 0) {
+                            listId = $(this).val();
+                        } else {
+                            listId += ',' + $(this).val();
+                        }
+                    })
+                    
+                    var title = "成批【设置数据分类】";
+                    var url = "info_setKind.htm?ids="+listId;
+                    layer_show(title, url, 500, 300); 
+                    return false;
+                                        
+                } else {
+                    layer.msg("错误：请至少选择一条要操作的数据！");
+                }
+            });
+           /*--------------------------------------------------------------------------------------*/
 
             //导出数据
             $('#butExport').click(function() {
@@ -398,8 +425,8 @@
                 jsonObject["col3"] = data["str1"];
                 jsonObject["col4"] = data["str2"];
                 jsonObject["col5"] = data["str3"];
-                jsonObject["col6"] = data["str7"];
-                jsonObject["col7"] = data["str8"];
+                jsonObject["col6"] = data["str6"];
+                jsonObject["col7"] = data["str7"];
                 
                 jsonObject["col8"] = data["reportName"];
                 jsonObject["col9"] = data["reportTime"];
