@@ -158,16 +158,15 @@
                 "columns": [
                     { "data": "col1"},
                     { "data": "col2"},
-                    { "data": "col3"},//机构名称
-                    { "data": "col4"},//机构属性
-                    /*{ "data": "col5"},*/
-                    { "data": "col6"},//资产规模
-                    /*{ "data": "col7"},//实际控制人
-                    { "data": "col8"},情况
-                    { "data": "col9"},情况*/
-                    { "data": "col10"},//联系人
-                    { "data": "col11"}, 
-                    { "data": "col12"},
+                    { "data": "col3"},
+                    { "data": "col4"},
+                    { "data": "col5"},
+                    { "data": "col6"},
+                    { "data": "col7"},
+                    { "data": "col8"},
+                    { "data": "col9"},
+                    { "data": "col10"},
+                    { "data": "col11"}
                 ],
                 "aaSorting": [
                     [1, "asc"]
@@ -253,7 +252,6 @@
             /*--------------------------------------------------------------------------------------*/
             //批量导入上报列表
             $('#butReport').click(function () {
-                alert("butReport");
                 var listId = '';
                 var checkedBox = $("input[name='seledoc']:checked");
                 if (checkedBox.length > 0) {
@@ -272,7 +270,7 @@
                                 ids: listId
                             },
                             ok: function (resp) {
-                                layer.msg('提示：操作成功!', {
+                                layer.msg(resp.data, {
                                     icon: 1,
                                     time: 1000
                                 })
@@ -432,7 +430,7 @@
                 jsonObject["col7"] = data["txt1"];
                                 
                 jsonObject["col8"] = data["reportName"];
-                jsonObject["col9"] = data["reportTime"];
+                jsonObject["col9"] = data["reportTime1"];
                 jsonObject["col10"] = data["abc"];
                                 
                 jsonObject["col11"] = "<a href='javascript:checkDetall(" + data["id"] +

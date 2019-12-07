@@ -252,7 +252,7 @@
             /*--------------------------------------------------------------------------------------*/
             //批量导入上报列表
             $('#butReport').click(function () {
-                alert("butReport");
+               
                 var listId = '';
                 var checkedBox = $("input[name='seledoc']:checked");
                 if (checkedBox.length > 0) {
@@ -271,7 +271,7 @@
                                 ids: listId
                             },
                             ok: function (resp) {
-                                layer.msg('提示：操作成功!', {
+                                layer.msg(resp.data, {
                                     icon: 1,
                                     time: 1000
                                 })
@@ -431,7 +431,7 @@
                 jsonObject["col8"] = data["str10"];
                 
                 jsonObject["col9"] = data["reportName"];
-                jsonObject["col10"] = data["reportTime"];
+                jsonObject["col10"] = data["reportTime1"];
                 jsonObject["col11"] = data["abc"];
                 
                 jsonObject["col12"] = "<a href='javascript:checkDetall(" + data["id"] +

@@ -1,7 +1,4 @@
-﻿
-
-
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head><meta charset="utf-8" /><meta name="renderer" content="webkit|ie-comp|ie-stand" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /><meta http-equiv="Cache-Control" content="no-siteapp" />
     <!--[if lt IE 9]>
@@ -26,7 +23,7 @@
 	我的桌面
 </title></head>
 <body>
-    <form name="form1" method="post" action="Welcome.aspx" id="form1">
+    <form name="form1" method="post" action="Welcome.html" id="form1">
 <div>
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTQzNDIwMzA4OGRkBdsY3k6oME7ypB+KIPGf8Y5WHh8=" />
 </div>
@@ -40,315 +37,108 @@
             欢迎使用
             ！</p>
         
-        <table class="table table-border table-bordered table-bg" style="display: none">
-            <thead>
-                <tr>
-                    <th colspan="7" scope="col">
-                        信息统计
-                    </th>
-                </tr>
-                <tr class="text-c">
-                    <th>
-                        统计
-                    </th>
-                    <th>
-                        资讯库
-                    </th>
-                    <th>
-                        图片库
-                    </th>
-                    <th>
-                        产品库
-                    </th>
-                    <th>
-                        用户
-                    </th>
-                    <th>
-                        管理员
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="text-c">
-                    <td>
-                        总数
-                    </td>
-                    <td>
-                        92
-                    </td>
-                    <td>
-                        9
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        8
-                    </td>
-                    <td>
-                        20
-                    </td>
-                </tr>
-                <tr class="text-c">
-                    <td>
-                        今日
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                </tr>
-                <tr class="text-c">
-                    <td>
-                        昨日
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                </tr>
-                <tr class="text-c">
-                    <td>
-                        本周
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                </tr>
-                <tr class="text-c">
-                    <td>
-                        本月
-                    </td>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                    <td>
-                        0
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        
         <table class="table table-border table-bordered table-bg mt-20">
             <thead>
                 <tr>
                     <th colspan="2" scope="col">
-                        服务器信息
+                        常用功能导航
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody>                
                 <tr>
-                    <th width="200">
-                        服务器计算机名
-                    </th>
                     <td>
-                        <span id="lbServerName">
-                            DESKTOP-QG7MV65</span>
+                        上报数据
+                    </td>
+                    <td>
+                          <input data-href="report/reportInfo/List.htm" data-title="上报数据" 
+                           class="btn btn-primary radius" id="btn1" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        接收数据
+                    </td>
+                    <td>
+                         <input data-href="info/info1/receiveReport.htm" data-title="上报接收"
+                           class="btn btn-primary radius" id="Submit1" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重点区域
+                    </td>
+                    <td>
+                        <input data-href="info/info1/info1_List.htm" data-title="重点区域"
+                           class="btn btn-primary radius" id="Submit2" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重点实验室
+                    </td>
+                    <td>
+                       <input data-href="info/info3/info1_List.htm" data-title="重点实验室"
+                           class="btn btn-primary radius" id="Submit3" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重点项目
+                    </td>
+                    <td>
+                        <input data-href="info/info4/info1_List.htm" data-title="重点项目"
+                           class="btn btn-primary radius" id="Submit4" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重点企业
+                    </td>
+                    <td>
+                        <input data-href="info/info5/info1_List.htm" data-title="重点企业"
+                           class="btn btn-primary radius" id="Submit5" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        重点院校
+                    </td>
+                    <td>
+                        <input data-href="info/info6/info1_List.htm" data-title="重点院校"
+                           class="btn btn-primary radius" id="Submit6" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                       金融机构
+                    </td>
+                    <td>
+                        <input data-href="info/info7/info1_List.htm" data-title="金融机构"
+                           class="btn btn-primary radius" id="Submit7" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        通讯录
+                    </td>
+                    <td>
+                        <input data-href="info/info8/info1_List.htm" data-title="通讯录"
+                           class="btn btn-primary radius" id="Submit8" type="submit" value="点击进入>>"
+                           onclick="javascript:Hui_admin_tab(this);return false;" />
                     </td>
                 </tr>
                 
-                <tr>
-                    <td>
-                        服务器IP地址
-                    </td>
-                    <td>
-                        127.0.0.1
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器域名
-                    </td>
-                    <td>
-                        localhost
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器端口
-                    </td>
-                    <td>
-                        5674
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器IIS版本
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        网站所在文件夹
-                    </td>
-                    <td>
-                        E:\湖北电科院\InfoMngSolution\WebSite\
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器操作系统
-                    </td>
-                    <td>
-                        Microsoft Windows NT 6.2.9200.0
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器脚本超时时间
-                    </td>
-                    <td>
-                        0秒
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器的语言种类
-                    </td>
-                    <td>
-                        Chinese (People's Republic of China)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        .NET Framework 版本
-                    </td>
-                    <td>
-                        2.050727.9043
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器当前时间
-                    </td>
-                    <td>
-                        2019/10/11 0:34:07
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器IE版本
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        服务器上次启动到现在已运行
-                    </td>
-                    <td>
-                        279分钟
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        CPU 总数
-                    </td>
-                    <td>
-                        4
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        CPU 类型
-                    </td>
-                    <td>
-                        AMD64 Family 21 Model 48 Stepping 1, AuthenticAMD
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        虚拟内存
-                    </td>
-                    <td>
-                        60840M
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        当前程序占用内存
-                    </td>
-                    <td>
-                        7.08M
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Asp.net所占内存
-                    </td>
-                    <td>
-                        59.82M
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        当前Session数量
-                    </td>
-                    <td>
-                        0
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        当前SessionID
-                    </td>
-                    <td>
-                        wclgzxz0gmlaay45oa103l55
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        当前系统用户名
-                    </td>
-                    <td>
-                        jinshouji
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </div>
@@ -359,9 +149,49 @@
 			本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>-->
 	</div>
 	
-	<script type="text/javascript">
-	    
-	</script>
+
+    <script type="text/javascript">
+        /*菜单导航*/
+        function Hui_admin_tab(obj) {
+            var bStop = false,
+		    bStopIndex = 0,
+		    href = $(obj).attr('data-href'),
+		    title = $(obj).attr("data-title"),
+		    topWindow = $(window.parent.document),
+		    show_navLi = topWindow.find("#min_title_list li"),
+		    iframe_box = topWindow.find("#iframe_box");
+            //console.log(topWindow);
+            if (!href || href == "") {
+                alert("data-href不存在，v2.5版本之前用_href属性，升级后请改为data-href属性");
+                return false;
+            }
+            if (!title) {
+                alert("v2.5版本之后使用data-title属性");
+                return false;
+            }
+            if (title == "") {
+                alert("data-title属性不能为空");
+                return false;
+            }
+            show_navLi.each(function() {
+                if ($(this).find('span').attr("data-href") == href) {
+                    bStop = true;
+                    bStopIndex = show_navLi.index($(this));
+                    return false;
+                }
+            });
+            if (!bStop) {
+                creatIframe(href, title);
+                min_titleList();
+            } else {
+                show_navLi.removeClass("active").eq(bStopIndex).addClass("active");
+                iframe_box.find(".show_iframe").hide().eq(bStopIndex).show().find("iframe").attr("src", href);
+            }
+
+            return false;
+        }
+    </script>
+    
 </footer>
     </form>
 </body>

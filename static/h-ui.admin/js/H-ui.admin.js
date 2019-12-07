@@ -242,7 +242,7 @@ function getHTMLDate(obj) {
 	obj.html(_yy + "年" + _mm + "月" + _dd + "日 " + _ww);
 };
 
-$(function () {
+$(function () {    
 	getHTMLDate($("#top_time"));
 	getskincookie();
 	//layer.config({extend: 'extend/layer.ext.js'});

@@ -58,6 +58,10 @@ ES.info = {
 	infoDetailToWord:       ES.svrUrl + '/web/info/exportToWord',               //导入单条数据到Word
 	setInfoKind:            ES.svrUrl + '/web/info/setKind',                    //成批的设计数据的分类
 	infoToReportList:       ES.svrUrl + '/web/info/infoToReportList',           //成批的将数据设置为待报列表
+	reportDataList:         ES.svrUrl + '/web/info/reportDataList',             //待报的数据列表
+	exportReportFile:       ES.svrUrl + '/web/info/exportReportFile',           //待报的数据列表
+	importReportFile:       ES.svrUrl + '/web/info/importReportFile',           //接收上报文件
+	clearReportinfo:        ES.svrUrl + '/web/info/clearReportinfo',             //清理上报数据
 };
 
 
