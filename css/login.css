@@ -1,0 +1,169 @@
+.login-bg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background:url('../images/login-bg.png') no-repeat center center;
+  background-size: 100% 100%;
+}
+.login-overlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+.login-container{
+  position: absolute;
+  width: 280px;
+  height: 430px;
+  top: 50%;
+  right: 8%;
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  background-color: rgba(0,0,0,.6);
+  padding: 0 22px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid #FFBBBB;
+  box-shadow: 0 2px 4px 0 rgba(201,140,140,0.50);
+  border-radius: 8px;
+}
+
+/*------Appä¸‹è½½-----------*/
+.login-app-container{
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  top: 90%;
+  left: 90%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border-radius: 4px;
+  padding: 0 22px;
+  overflow: hidden;
+}
+
+
+.login-container label{
+  font-weight: bold!important;
+}
+.login-container input{
+  color: #333;
+  border-radius: 0!important;
+  background-color: transparent;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-color:#999;
+}
+.login-container .logo{
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+.login-container .logo svg{
+  font-size: 82px;
+  color: white;
+}
+.login-container .logo .title{
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #039588;
+}
+.login-container .form form{
+  height: 252px;
+}
+.login-container .form label{
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+}
+.login-container .validate-input{
+  float: left;
+  width: 116px;
+}
+.login-container .validate-code{
+  float: left;
+  height: 36px;
+  margin: 38px 6px 0 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.login-container .validate-code img{
+  width: 102px;
+  height: 36px;
+}
+.login-container .validate-text{
+  float: right;
+  margin-top: 48px;
+  font-size: 12px;
+  color: #5e83d7;
+  cursor: pointer;
+}
+.login-container .validate-text:hover{
+  text-decoration: underline;
+}
+.login-container .submit{
+  width: 280px;
+  height: 44px;
+  margin-top: 48px;
+  line-height: 44px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  background-color: #DA0816;
+  border: 1px solid #FEBABA;
+  border-radius: 8px;
+}
+.login-container .submit:hover{opacity:.8;filter:alpha(opacity=80)}
+.login-container .error{
+  position: relative;
+  bottom: 560px;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  color: #009688;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  border-radius: 30px;
+}
+.login-rights{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.layui-input-block{margin-left: 0;position: relative;}
+.layui-inline{margin-bottom: 12px;}
+.layui-form-label{
+  padding:10px;
+}
+.checkBox-label{
+  padding-right:0px;  
+  width: 60px;
+}
+.logo-box{
+  padding:20px;
+}
+.logo-title{
+  font-size: 16px;
+  color: #DA0816;
+  font-weight: bold;
+  padding-top:20px;
+}
+.layui-form-item{
+  margin-bottom: 0px;
+}

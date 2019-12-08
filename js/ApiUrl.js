@@ -40,7 +40,9 @@ ES.LoginApi = {
 	login: ES.svrUrl + '/web/login',                                                                              
 	signout: ES.svrUrl + '/web/signout',             
 	userinfo: ES.svrUrl + '/web/userinfo',                          
-	modifyPass: ES.svrUrl + '/web/modifyPassword',                      
+	modifyPass: ES.svrUrl + '/web/modifyPassword',  
+	init: ES.svrUrl + '/web/userinit',  
+	                    
 };
 
 
@@ -62,6 +64,7 @@ ES.info = {
 	exportReportFile:       ES.svrUrl + '/web/info/exportReportFile',           //待报的数据列表
 	importReportFile:       ES.svrUrl + '/web/info/importReportFile',           //接收上报文件
 	clearReportinfo:        ES.svrUrl + '/web/info/clearReportinfo',             //清理上报数据
+	getInfoCount:           ES.svrUrl + '/web/info/getInfoCount',                //得到信息到分组数量
 };
 
 

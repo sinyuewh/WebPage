@@ -1,11 +1,17 @@
-﻿<!DOCTYPE HTML>
-<html>
-<head><meta charset="utf-8" /><meta name="renderer" content="webkit|ie-comp|ie-stand" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /><meta http-equiv="Cache-Control" content="no-siteapp" />
-    <!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5shiv.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
-<![endif]-->
-    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" /><link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" /><link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" /><link id="skin" rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" /><link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh-cn">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>中融办信息管理系统 </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/index.css">
+	
+	
 
     <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 
@@ -14,185 +20,127 @@
     <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 
     <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
+</head>
 
-    <!--[if IE 6]>
-<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
-<script>DD_belatedPNG.fix('*');</script>
-<![endif]-->
-    <title>
-	我的桌面
-</title></head>
 <body>
-    <form name="form1" method="post" action="Welcome.html" id="form1">
-<div>
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTQzNDIwMzA4OGRkBdsY3k6oME7ypB+KIPGf8Y5WHh8=" />
-</div>
+	<div class="main">
+		<div class="main-box">
+			<div class="main-box1">
+				<div class="cont" id="data1" data-href="info/info1/info1_List.htm" data-title="重点区域" onclick="javascript:Hui_admin_tab(this);return false;">
+					<div class="box-title">重点区域</div>
+					<div class="box-count" id="count1">0</div>
+				</div>
 
-<div>
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4B9E2203" />
-</div>
-    <div class="page-container">
-        <p class="f-20 text-success">
-            欢迎使用
-            ！</p>
-        
-        
-        <table class="table table-border table-bordered table-bg mt-20">
-            <thead>
-                <tr>
-                    <th colspan="2" scope="col">
-                        常用功能导航
-                    </th>
-                </tr>
-            </thead>
-            <tbody>                
-                <tr>
-                    <td>
-                        上报数据
-                    </td>
-                    <td>
-                          <input data-href="report/reportInfo/List.htm" data-title="上报数据" 
-                           class="btn btn-primary radius" id="btn1" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        接收数据
-                    </td>
-                    <td>
-                         <input data-href="info/info1/receiveReport.htm" data-title="上报接收"
-                           class="btn btn-primary radius" id="Submit1" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        重点区域
-                    </td>
-                    <td>
-                        <input data-href="info/info1/info1_List.htm" data-title="重点区域"
-                           class="btn btn-primary radius" id="Submit2" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        重点实验室
-                    </td>
-                    <td>
-                       <input data-href="info/info3/info1_List.htm" data-title="重点实验室"
-                           class="btn btn-primary radius" id="Submit3" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        重点项目
-                    </td>
-                    <td>
-                        <input data-href="info/info4/info1_List.htm" data-title="重点项目"
-                           class="btn btn-primary radius" id="Submit4" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        重点企业
-                    </td>
-                    <td>
-                        <input data-href="info/info5/info1_List.htm" data-title="重点企业"
-                           class="btn btn-primary radius" id="Submit5" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        重点院校
-                    </td>
-                    <td>
-                        <input data-href="info/info6/info1_List.htm" data-title="重点院校"
-                           class="btn btn-primary radius" id="Submit6" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                       金融机构
-                    </td>
-                    <td>
-                        <input data-href="info/info7/info1_List.htm" data-title="金融机构"
-                           class="btn btn-primary radius" id="Submit7" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        通讯录
-                    </td>
-                    <td>
-                        <input data-href="info/info8/info1_List.htm" data-title="通讯录"
-                           class="btn btn-primary radius" id="Submit8" type="submit" value="点击进入>>"
-                           onclick="javascript:Hui_admin_tab(this);return false;" />
-                    </td>
-                </tr>
-                
-                
-            </tbody>
-        </table>
-    </div>
-    <footer class="footer mt-20">
-	<div class="container">
-		<!--<p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br>
-			Copyright &copy;2015-2017 H-ui.admin v3.1 All Rights Reserved.<br>
-			本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>-->
+			</div>
+			<div class="main-box2">
+				<div class="main-store1" id="data2" data-href="info/info3/info1_List.htm" data-title="重点实验室"  onclick="javascript:Hui_admin_tab(this);return false;" >
+					<div class="box-title" >重点实验室</div>
+					<div class="box-count" id="count3">0</div>
+				</div>
+				<div class="main-store2" id="data3" data-href="info/info4/info1_List.htm" data-title="重点项目" onclick="javascript:Hui_admin_tab(this);return false;">
+					<div class="box-title">重点项目</div>
+					<div class="box-count" id="count4">0</div>
+				</div>
+			</div>
+			<div class="main-box3">
+				<div class="main-box-child">
+					<div class="child-cont cont1" id="data4" data-href="info/info5/info1_List.htm" data-title="重点企业" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">重点企业</div>
+						<div class="box-count" id="count5">0</div>
+					</div>
+				</div>
+				<div class="main-box-child">
+					<div class="child-cont cont2" id="data5" data-href="info/info6/info1_List.htm" data-title="重点院校" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">重点院校</div>
+						<div class="box-count" id="count6">0</div>
+					</div>
+				</div>
+				<div class="main-box-child">
+					<div class="child-cont cont3" id="data6" data-href="info/info7/info1_List.htm" data-title="金融机构" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">金融机构</div>
+						<div class="box-count" id="count7">0</div>
+					</div>
+				</div>
+				<div class="main-box-child">
+					<div class="child-cont cont4" id="data7" data-href="info/info8/info1_List.htm" data-title="通讯录" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">通讯录</div>
+						<div class="box-count" id="count8">0</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-box4">
+				<div class="handle-btn btn-upload" id="uploadData"  data-href="report/reportInfo/List.htm" data-title="上报数据"   onclick="javascript:Hui_admin_tab(this);return false;">
+					<i class="icon-upload"></i>
+					<span>上报数据</span>
+				</div>
+				<div class="handle-btn btn-dowload" id="dowloadData" data-href="info/info1/receiveReport.htm" data-title="上报接收" onclick="javascript:Hui_admin_tab(this);return false;">
+					<i class="icon-dowload"></i>
+					<span>接收数据</span>
+				</div>
+			</div>
+		</div>
 	</div>
-	
-
-    <script type="text/javascript">
-        /*菜单导航*/
-        function Hui_admin_tab(obj) {
-            var bStop = false,
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="./js/layer/layer.js"></script>
+    <script src="js/ApiUrl.js" type="text/javascript"></script>
+    
+	 <script type="text/javascript">
+	     //设置数量
+	     $.ajax({
+	         type: "POST",
+	         url: ES.info.getInfoCount,
+	         data: {},
+	         success: function(resp) {
+	             for (var i = 1; i <= 8; i++) {
+	                 if (i != 2) {
+	                     $('#count' + i).text(resp.data[i]);
+	                 }
+	             }
+	         }
+	     });
+	     
+	     
+	     /*菜单导航*/
+	     function Hui_admin_tab(obj) {
+	         var bStop = false,
 		    bStopIndex = 0,
 		    href = $(obj).attr('data-href'),
 		    title = $(obj).attr("data-title"),
 		    topWindow = $(window.parent.document),
 		    show_navLi = topWindow.find("#min_title_list li"),
 		    iframe_box = topWindow.find("#iframe_box");
-            //console.log(topWindow);
-            if (!href || href == "") {
-                alert("data-href不存在，v2.5版本之前用_href属性，升级后请改为data-href属性");
-                return false;
-            }
-            if (!title) {
-                alert("v2.5版本之后使用data-title属性");
-                return false;
-            }
-            if (title == "") {
-                alert("data-title属性不能为空");
-                return false;
-            }
-            show_navLi.each(function() {
-                if ($(this).find('span').attr("data-href") == href) {
-                    bStop = true;
-                    bStopIndex = show_navLi.index($(this));
-                    return false;
-                }
-            });
-            if (!bStop) {
-                creatIframe(href, title);
-                min_titleList();
-            } else {
-                show_navLi.removeClass("active").eq(bStopIndex).addClass("active");
-                iframe_box.find(".show_iframe").hide().eq(bStopIndex).show().find("iframe").attr("src", href);
-            }
+	         //console.log(topWindow);
+	         if (!href || href == "") {
+	             alert("data-href不存在，v2.5版本之前用_href属性，升级后请改为data-href属性");
+	             return false;
+	         }
+	         if (!title) {
+	             alert("v2.5版本之后使用data-title属性");
+	             return false;
+	         }
+	         if (title == "") {
+	             alert("data-title属性不能为空");
+	             return false;
+	         }
+	         show_navLi.each(function() {
+	             if ($(this).find('span').attr("data-href") == href) {
+	                 bStop = true;
+	                 bStopIndex = show_navLi.index($(this));
+	                 return false;
+	             }
+	         });
+	         if (!bStop) {
+	             creatIframe(href, title);
+	             min_titleList();
+	         } else {
+	             show_navLi.removeClass("active").eq(bStopIndex).addClass("active");
+	             iframe_box.find(".show_iframe").hide().eq(bStopIndex).show().find("iframe").attr("src", href);
+	         }
 
-            return false;
-        }
+	         return false;
+	     }
     </script>
-    
-</footer>
-    </form>
 </body>
+
 </html>
