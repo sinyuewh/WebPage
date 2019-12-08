@@ -120,27 +120,33 @@
                 }, //参数值
                 type: "POST", //请求方式
                 success: function(req) {
-                    console.log(req)
-                    //请求成功时处理
-                    var token = $('#userName').val();   //用户登陆成功的token （session-id);
-                    //将token存入cookie
-                    $.cookie('token', token);
-
-                    //处理是否记住密码
-                    /* 记住密码功能 */
-                    var flag = $("#online").prop('checked');
-                    var userName = $('#userName').val();
-                    var passWord = $('#passWord').val();
-                    if (flag) {
-                        localStorage.setItem('userName', userName)
-                        localStorage.setItem('passWord', passWord)
-                    } else {
-                        localStorage.setItem('userName', '')
-                        localStorage.setItem('passWord', '')
+                    if (req.code != 0) {
+                        layer.alert("错误：用户名或密码错误！");
                     }
+                    else {
+                        console.log(req)
 
-                    //转主页
-                    top.location.href = "index.html";
+                        //请求成功时处理
+                        var token = $('#userName').val();   //用户登陆成功的token （session-id);
+                        //将token存入cookie
+                        $.cookie('token', token);
+
+                        //处理是否记住密码
+                        /* 记住密码功能 */
+                        var flag = $("#online").prop('checked');
+                        var userName = $('#userName').val();
+                        var passWord = $('#passWord').val();
+                        if (flag) {
+                            localStorage.setItem('userName', userName)
+                            localStorage.setItem('passWord', passWord)
+                        } else {
+                            localStorage.setItem('userName', '')
+                            localStorage.setItem('passWord', '')
+                        }
+
+                        //转主页
+                        top.location.href = "index.html";
+                    }
 
                 },
                 error: function() {
