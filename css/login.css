@@ -19,47 +19,27 @@
 }
 .login-container{
   position: absolute;
-  width: 280px;
-  height: 430px;
+  width: 346px;
+  height: 445px;
   top: 50%;
-  right: 8%;
-  -ms-transform: translate(0,-50%);
-  transform: translate(0,-50%);
-  background-color: rgba(0,0,0,.6);
-  padding: 0 22px;
+  left: 50%;
+  -ms-transform: translate(-50%,-66%);
+  transform: translate(-50%,-66%);
   overflow: hidden;
-  background: #FFFFFF;
-  border: 1px solid #FFBBBB;
-  box-shadow: 0 2px 4px 0 rgba(201,140,140,0.50);
-  border-radius: 8px;
+  /* background: #FFFFFF; */
+  /* border: 1px solid #FFBBBB; */
+  /* box-shadow: 0 2px 4px 0 rgba(201,140,140,0.50); */
+  /* border-radius: 8px; */
+  box-sizing: border-box;
 }
-
-/*------Appä¸‹è½½-----------*/
-.login-app-container{
-  position: absolute;
-  width: 320px;
-  height: 180px;
-  top: 90%;
-  left: 90%;
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  border-radius: 4px;
-  padding: 0 22px;
-  overflow: hidden;
-}
-
-
 .login-container label{
   font-weight: bold!important;
 }
 .login-container input{
   color: #333;
-  border-radius: 0!important;
+  border-radius: 5px!important;
   background-color: transparent;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  border-color:#999;
+  border-color:#DFDFDF;
 }
 .login-container .logo{
   width: 100%;
@@ -83,6 +63,7 @@
   text-align: left;
   color: #333;
   font-size: 14px;
+  width:50px;
 }
 .login-container .validate-input{
   float: left;
@@ -110,11 +91,10 @@
   text-decoration: underline;
 }
 .login-container .submit{
-  width: 280px;
   height: 44px;
-  margin-top: 48px;
+  margin-top: 10px;
   line-height: 44px;
-  font-size: 14px;
+  font-size: 16px;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -145,25 +125,32 @@
   color: white;
   font-size: 14px;
 }
-
-.layui-input-block{margin-left: 0;position: relative;}
+.layui-form-item .layui-input-inline{
+  width:286px;
+}
 .layui-inline{margin-bottom: 12px;}
 .layui-form-label{
-  padding:10px;
+  box-sizing: border-box;
+  padding:10px 0 10px 6px;
 }
-.checkBox-label{
-  padding-right:0px;  
-  width: 60px;
+.login-container .form .checkBox{
+  padding-left:50px;
+}
+.login-container .form .checkBox-label{
+  padding-left:6px;  
+  width: 80px;
+  font-size: 12px!important;
 }
 .logo-box{
-  padding:20px;
+  padding:20px 0;
 }
 .logo-title{
-  font-size: 16px;
-  color: #DA0816;
+  font-size: 20px;
+  color: #333333;
   font-weight: bold;
-  padding-top:20px;
+  margin-top:30px;
+  margin-bottom:30px;
 }
 .layui-form-item{
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }

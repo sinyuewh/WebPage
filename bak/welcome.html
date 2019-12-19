@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./css/index.css">
 	
 	
+
     <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
@@ -24,49 +25,57 @@
 <body>
 	<div class="main">
 		<div class="main-box">
-			<div class="row row1">
-				<div class="main-block1" id="data1" data-href="info/info1/info1_List.htm" data-title="重点区域" onclick="javascript:Hui_admin_tab(this);return false;">
+			<div class="main-box1">
+				<div class="cont" id="data1" data-href="info/info1/info1_List.htm" data-title="重点区域" onclick="javascript:Hui_admin_tab(this);return false;">
 					<div class="box-title">重点区域</div>
 					<div class="box-count" id="count1">0</div>
 				</div>
-				<div class="main-block2" id="data2" data-href="info/info3/info1_List.htm" data-title="重点实验室"  onclick="javascript:Hui_admin_tab(this);return false;" >
+
+			</div>
+			<div class="main-box2">
+				<div class="main-store1" id="data2" data-href="info/info3/info1_List.htm" data-title="重点实验室"  onclick="javascript:Hui_admin_tab(this);return false;" >
 					<div class="box-title" >重点实验室</div>
 					<div class="box-count" id="count3">0</div>
 				</div>
-				<div class="main-block3" id="data3" data-href="info/info4/info1_List.htm" data-title="重点项目" onclick="javascript:Hui_admin_tab(this);return false;">
+				<div class="main-store2" id="data3" data-href="info/info4/info1_List.htm" data-title="重点项目" onclick="javascript:Hui_admin_tab(this);return false;">
 					<div class="box-title">重点项目</div>
 					<div class="box-count" id="count4">0</div>
 				</div>
-				<div class="main-block4">
-					<div class="main-box4">
-						<div class="handle-btn btn-upload" id="uploadData"  data-href="report/reportInfo/List.htm" data-title="上报数据"   onclick="javascript:Hui_admin_tab(this);return false;">
-							<i class="icon-upload"></i>
-							<span>上报数据</span>
-						</div>
-						<div class="handle-btn btn-dowload" id="dowloadData" data-href="info/info1/receiveReport.htm" data-title="上报接收" onclick="javascript:Hui_admin_tab(this);return false;">
-							<i class="icon-dowload"></i>
-							<span>接收数据</span>
-						</div>
+			</div>
+			<div class="main-box3">
+				<div class="main-box-child">
+					<div class="child-cont cont1" id="data4" data-href="info/info5/info1_List.htm" data-title="重点企业" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">重点企业</div>
+						<div class="box-count" id="count5">0</div>
 					</div>
 				</div>
-
+				<div class="main-box-child">
+					<div class="child-cont cont2" id="data5" data-href="info/info6/info1_List.htm" data-title="重点院校" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">重点院校</div>
+						<div class="box-count" id="count6">0</div>
+					</div>
+				</div>
+				<div class="main-box-child">
+					<div class="child-cont cont3" id="data6" data-href="info/info7/info1_List.htm" data-title="金融机构" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">金融机构</div>
+						<div class="box-count" id="count7">0</div>
+					</div>
+				</div>
+				<div class="main-box-child">
+					<div class="child-cont cont4" id="data7" data-href="info/info8/info1_List.htm" data-title="通讯录" onclick="javascript:Hui_admin_tab(this);return false;">
+						<div class="box-title">通讯录</div>
+						<div class="box-count" id="count8">0</div>
+					</div>
+				</div>
 			</div>
-			<div class="row row2">
-				<div class="main-block1" id="data4" data-href="info/info5/info1_List.htm" data-title="重点企业" onclick="javascript:Hui_admin_tab(this);return false;">
-					<div class="box-title">重点企业</div>
-					<div class="box-count" id="count5">0</div>
+			<div class="main-box4">
+				<div class="handle-btn btn-upload" id="uploadData"  data-href="report/reportInfo/List.htm" data-title="上报数据"   onclick="javascript:Hui_admin_tab(this);return false;">
+					<i class="icon-upload"></i>
+					<span>上报数据</span>
 				</div>
-				<div class="main-block2"  id="data6" data-href="info/info7/info1_List.htm" data-title="金融机构" onclick="javascript:Hui_admin_tab(this);return false;">
-					<div class="box-title">金融机构</div>
-					<div class="box-count" id="count7">0</div>
-				</div>
-				<div class="main-block3" id="data7" data-href="info/info8/info1_List.htm" data-title="通讯录" onclick="javascript:Hui_admin_tab(this);return false;">
-					<div class="box-title">通讯录</div>
-					<div class="box-count" id="count8">0</div>
-				</div>
-				<div class="main-block4" id="data5" data-href="info/info6/info1_List.htm" data-title="重点院校" onclick="javascript:Hui_admin_tab(this);return false;">
-					<div class="box-title">重点院校</div>
-					<div class="box-count" id="count6">0</div>
+				<div class="handle-btn btn-dowload" id="dowloadData" data-href="info/info1/receiveReport.htm" data-title="上报接收" onclick="javascript:Hui_admin_tab(this);return false;">
+					<i class="icon-dowload"></i>
+					<span>接收数据</span>
 				</div>
 			</div>
 		</div>
@@ -90,8 +99,8 @@
 	             }
 	         }
 	     });
-
-
+	     
+	     
 	     /*菜单导航*/
 	     function Hui_admin_tab(obj) {
 	         var bStop = false,

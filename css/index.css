@@ -1,129 +1,78 @@
 .main{
   box-sizing: border-box;
-  min-width: 800px;
+  min-width: 1000px;
   height: 100%;
   min-height: 600px;
-  padding:15px 0 15px 15px;
+  padding:0px 0 0px 15px;
 }
 .main-box{
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* padding:0px 0 15px 15px; */
 }
-.main-box>div{
-  height: 100%;
-  width:25%;
+.main-box .row{
+  height: calc(50% - 15px);
+  min-height: 220px;
+  width:100%;
   box-sizing: border-box;
-  padding-right: 15px;
+}
+.main-box .row >div{
+  position: relative;
+  bottom: 0px;
+  z-index: 999;
+  transition: all 0.3s;
+}
+.main-box .row >div:hover{
+  transform: scale(1.05);
+  transition: all 0.5s;
+}
+.main-box .row .box-title{
+  color:#fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding:20px;
+}
+.main-box .row1{
+  padding-top:15px;
+}
+.main-box .row1 >div{
   float: left;
-}
-.main-box>div .cont{
-  height: 100%;
-  min-height: 465px;
-  cursor: pointer;
-}
-.main-box>div .cont .box-title{
-  color:#fff;
-  font-size: 14px;
-  font-weight: bold;
-  padding:20px;
-}
-.main-box>div .cont .box-count{
-  color:#fff;
-  font-size: 30px;
-  font-weight: bold;
-  padding:0 20px;
-}
-.main-box1 .cont{
-  background: linear-gradient(-180deg, #FF5D5D 18%, rgba(216,216,216,0.00) 99%),url('../images/icon-school.png') center center / 100% 100% no-repeat;
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-.main-box2 .main-store1{
-  width: 100%;
-  height: 190px;
-  background: linear-gradient(-180deg, #FCB15C 7%, rgba(255,83,83,0.00) 100%),url('../images/icon-store2.png') center center / 100% 100% no-repeat;
-  background-size: 100% 100%;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.main-box2 .main-store1 .box-title{
-  color:#fff;
-  font-size: 14px;
-  font-weight: bold;
-  padding:20px;
-}
-.main-box2 .main-store1 .box-count{
-  color:#fff;
-  font-size: 30px;
-  font-weight: bold;
-  padding:0px 20px;
-}
-
-.main-box2 .main-store2{
-  margin-top: 15px;
-  width: 100%;
-  height: calc(100% - 205px);
-  min-height: 260px;
-  background:  linear-gradient(-180deg, #E79613 2%, rgba(146,188,69,0.00) 100%),url('../images/icon-store.png') center center / 100% 100% no-repeat;
-  background-size: 100% 100%;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.main-box2 .main-store2 .box-title{
-  color:#fff;
-  font-size: 14px;
-  font-weight: bold;
-  padding:20px;
-}
-.main-box2 .main-store2 .box-count{
-  color:#fff;
-  font-size: 30px;
-  font-weight: bold;
-  padding:0px 20px;
-}
-
-/*第三列 */
-.main-box .main-box3{
-  height: calc(100% + 14px);
-}
-.main-box3 .main-box-child{
-  height: 25%;
-  padding-bottom:15px;
-  box-sizing: border-box;
-}
-.main-box3 .main-box-child .child-cont{
-  width: 100%;
+  width: calc(25% - 15px);
   height: 100%;
   background-size: 100% 100%;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 15px;
 }
-.main-box3 .main-box-child .box-title{
+.row1 .main-block1{
+  background:  linear-gradient(180deg, #FF5D5D 18%, rgba(216,216,216,0.00) 100%),url('../images/icon-school.png') center center / 100% 100% no-repeat;
+}
+.row1 .main-block2{
+  background:   linear-gradient(180deg, #FCB15C 7%, rgba(255,83,83,0.00) 100%),url('../images/icon-store2.png') center center / 100% 100% no-repeat;
+}
+.row1 .main-block3{
+  background:  linear-gradient(180deg, #D53B3B 7%, rgba(255,83,83,0.00) 100%),url('../images/icon-store.png') center center / 100% 100% no-repeat;
+}
+.main-box .row >div .box-title{
   color:#fff;
   font-size: 14px;
   font-weight: bold;
   padding:20px;
 }
-.main-box3 .main-box-child .box-count{
+.main-box .row >div .box-count{
   color:#fff;
   font-size: 30px;
   font-weight: bold;
   padding:0px 20px;
 }
-.main-box3 .main-box-child .cont1{
-  background:  linear-gradient(-180deg, #D53B3B 3%, rgba(255,83,83,0.00) 100%),url('../images/icon-house.png') center center / 100% 100% no-repeat;
+.main-box .row1 .main-block4:hover{
+  transform: scale(1.00);
+  transition: all 0s;
 }
-.main-box3 .main-box-child .cont2{
-  background:   linear-gradient(-180deg, #BC7E00 0%, rgba(255,215,83,0.00) 100%),url('../images/icon-school-door.png') center center / 100% 100% no-repeat;
+.main-box .row1 .main-block4{
+  cursor: default;
 }
-.main-box3 .main-box-child .cont3{
-  background:  linear-gradient(-180deg, #517EC1 0%, rgba(48,127,199,0.00) 100%),url('../images/icon-bank.png') center center / 100% 100% no-repeat;
-}
-.main-box3 .main-box-child .cont4{
-  background:  linear-gradient(-180deg, #197BA5 0%, rgba(83,161,255,0.00) 100%),url('../images/icon-call.png') center center / 100% 100% no-repeat;
-}
-
-.main-box4 .handle-btn{
+.main-block4 .handle-btn{
   box-sizing: border-box;
   height: 50px;
   color:#fff;
@@ -149,14 +98,53 @@
   position: relative;
   top:4px;
 }
-.main-box4 .btn-upload{
+.main-block4 .btn-upload{
   margin-bottom: 15px;
   background: #027AFF;
   border: 1px solid #BBD1E9;
   border-radius: 5px;
 }
-.main-box4 .btn-dowload{
+.main-block4 .btn-dowload{
   background: #C17A4B;
 border: 1px solid #E8BA9C;
 border-radius: 5px;
+}
+/* 第二行 */
+.main-box .row2{
+  margin-top: 15px;
+  width: 75%;
+  min-height: 220px;
+}
+.main-box .row2 >div{
+  float: left;
+  width: calc(25% - 15px);
+  height: 100%;
+  background-size: 100% 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.main-box .row2 .box-title{
+  color:#fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding:20px;
+}
+.main-box .row2 .box-count{
+  color:#fff;
+  font-size: 30px;
+  font-weight: bold;
+  padding:0px 20px;
+}
+.row2 .main-block1{
+  background: linear-gradient(180deg, #BC7E00 0%, rgba(255,215,83,0.00) 100%),url('../images/icon-house.png') center center / 100% 100% no-repeat;
+}
+.row2 .main-block2{
+  background: linear-gradient(180deg, #517EC1 0%, rgba(48,127,199,0.00) 100%),url('../images/icon-bank.png') center center / 100% 100% no-repeat;
+}
+.row2 .main-block3{
+  background: linear-gradient(180deg, #E79613 2%, rgba(146,188,69,0.00) 100%),url('../images/icon-call.png') center center / 100% 100% no-repeat;
+}
+.row2 .main-block4{
+  background: linear-gradient(180deg, #197BA5 0%, rgba(83,161,255,0.00) 100%),url('../images/icon-school-door.png') center center / 100% 100% no-repeat;
 }
