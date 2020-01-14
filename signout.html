@@ -8,8 +8,9 @@
      <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
      <script language="javascript" type="text/javascript">
          $(function() {
-             //注销当前的用户信息
-             top.location.href = "login.html"
+         //注销当前的用户信息
+            $.cookie('token', '', { expires: -1 }); 
+            top.location.href = "login.html"
          });
     
      </script>

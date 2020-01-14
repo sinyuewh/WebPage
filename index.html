@@ -245,6 +245,10 @@
 			//获取当前登陆的用户信息
 			var token = $.cookie('token');		
 			var url = ES.LoginApi.userinfo;
+            if (typeof(token) == "undefined") 
+            { 
+               top.location.href="login.html"; 
+            }  
 
 			$.ajax({
 				type: "POST",

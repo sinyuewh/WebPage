@@ -122,6 +122,7 @@
                     var token = resp.data;   //用户登陆成功的token （session-id);
                     //将token存入cookie
                     $.cookie('token', token);
+                   
 
                     //判断用户是否需要保存密码
                     if ($('#online').get(0).checked) {
